@@ -2,7 +2,7 @@
 
 namespace AOIServer
 {
-    class Program
+    class ServerStart
     {
         static void Main(string[] args)
         {
