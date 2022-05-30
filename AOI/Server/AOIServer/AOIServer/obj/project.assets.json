@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.1": {
+      "AsyncNet/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/AsyncNet.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AsyncNet.dll": {}
+        }
+      },
       "Microsoft.NETCore.App/2.1.0": {
         "type": "package",
         "dependencies": {
@@ -207,10 +216,41 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "PELog/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/PELog.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/PELog.dll": {}
+        }
+      },
+      "AOICellProtocol/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/AOICellProtocol.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AOICellProtocol.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "AsyncNet/1.0.0": {
+      "sha512": "HB/3srIHoyFmUcCDlNZCD2iwF/EGvF9wLpBe11vtAWTtTDvJkppXWBWgN4qTXxlvNlKP48vrT7lHeJJRJfkjTw==",
+      "type": "package",
+      "path": "asyncnet/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "asyncnet.1.0.0.nupkg.sha512",
+        "asyncnet.nuspec",
+        "lib/netstandard2.0/AsyncNet.dll",
+        "齐齐课圆形Logo(500x500).png"
+      ]
+    },
     "Microsoft.NETCore.App/2.1.0": {
       "sha512": "JNHhG+j5eIhG26+H721IDmwswGUznTwwSuJMFe/08h0X2YarHvA15sVAvUkA/2Sp3W0ENNm48t+J7KTPRqEpfA==",
       "type": "package",
@@ -680,11 +720,32 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "PELog/1.0.1": {
+      "sha512": "EFy1lb6PV8Om8cAPD1epxiIQm2+H8eqEWpmk+LN0djdvzxFfbO9HzkJSoA72u6qNTJberWyVToYdIHfN4O0xQQ==",
+      "type": "package",
+      "path": "pelog/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/PELog.dll",
+        "pelog.1.0.1.nupkg.sha512",
+        "pelog.nuspec",
+        "齐齐课圆形Logo(500x500).png"
+      ]
+    },
+    "AOICellProtocol/1.0.0": {
+      "type": "project",
+      "path": "../AOICellProtocol/AOICellProtocol.csproj",
+      "msbuildProject": "../AOICellProtocol/AOICellProtocol.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "Microsoft.NETCore.App >= 2.1.0"
+      "AOICellProtocol >= 1.0.0",
+      "AsyncNet >= 1.0.0",
+      "Microsoft.NETCore.App >= 2.1.0",
+      "PELog >= 1.0.1"
     ]
   },
   "packageFolders": {
@@ -716,7 +777,11 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\UnityProject\\MoMoRpg\\AOI\\SimpleAOI\\AOI\\Server\\AOIServer\\AOICellProtocol\\AOICellProtocol.csproj": {
+              "projectPath": "E:\\UnityProject\\MoMoRpg\\AOI\\SimpleAOI\\AOI\\Server\\AOIServer\\AOICellProtocol\\AOICellProtocol.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -728,10 +793,18 @@
     "frameworks": {
       "netcoreapp2.1": {
         "dependencies": {
+          "AsyncNet": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
           "Microsoft.NETCore.App": {
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
+          },
+          "PELog": {
+            "target": "Package",
+            "version": "[1.0.1, )"
           }
         },
         "imports": [

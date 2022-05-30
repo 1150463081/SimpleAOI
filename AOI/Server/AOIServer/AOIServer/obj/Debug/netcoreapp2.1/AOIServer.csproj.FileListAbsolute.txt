@@ -1,0 +1,14 @@
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\bin\Debug\netcoreapp2.1\AOIServer.deps.json
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\bin\Debug\netcoreapp2.1\AOIServer.runtimeconfig.json
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\bin\Debug\netcoreapp2.1\AOIServer.runtimeconfig.dev.json
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\bin\Debug\netcoreapp2.1\AOIServer.dll
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\bin\Debug\netcoreapp2.1\AOIServer.pdb
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\obj\Debug\netcoreapp2.1\AOIServer.csprojAssemblyReference.cache
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\obj\Debug\netcoreapp2.1\AOIServer.csproj.CoreCompileInputs.cache
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\obj\Debug\netcoreapp2.1\AOIServer.AssemblyInfoInputs.cache
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\obj\Debug\netcoreapp2.1\AOIServer.AssemblyInfo.cs
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\obj\Debug\netcoreapp2.1\AOIServer.dll
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\obj\Debug\netcoreapp2.1\AOIServer.pdb
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\bin\Debug\netcoreapp2.1\AOICellProtocol.dll
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\bin\Debug\netcoreapp2.1\AOICellProtocol.pdb
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\obj\Debug\netcoreapp2.1\AOIServer.csproj.CopyComplete
