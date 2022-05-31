@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "AOIServer": {
+      "commandName": "Project"
+    }
+  }
+}

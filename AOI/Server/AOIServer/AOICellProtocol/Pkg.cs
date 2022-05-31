@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace AOICellProtocol
 {
+    [Serializable]
     public class Pkg: AsyncMsg
     {
     }

@@ -5,13 +5,22 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>bin\Debug\netcoreapp2.1\</OutputPath>
+  </PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="AsyncNet" Version="1.0.0" />
     <PackageReference Include="PELog" Version="1.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AOICellProtocol\AOICellProtocol.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="AsyncNet">
+      <HintPath>bin\Debug\netcoreapp2.1\AsyncNet.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

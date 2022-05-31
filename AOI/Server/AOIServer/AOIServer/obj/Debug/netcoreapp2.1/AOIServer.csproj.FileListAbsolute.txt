@@ -12,3 +12,16 @@ E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\obj\Debug\n
 E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\bin\Debug\netcoreapp2.1\AOICellProtocol.dll
 E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\bin\Debug\netcoreapp2.1\AOICellProtocol.pdb
 E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\obj\Debug\netcoreapp2.1\AOIServer.csproj.CopyComplete
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\AOIClient\AOIClient\Assets\Plugins\netcoreapp2.1\AOIServer.deps.json
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\AOIClient\AOIClient\Assets\Plugins\netcoreapp2.1\AOIServer.runtimeconfig.json
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\AOIClient\AOIClient\Assets\Plugins\netcoreapp2.1\AOIServer.runtimeconfig.dev.json
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\AOIClient\AOIClient\Assets\Plugins\netcoreapp2.1\AOIServer.dll
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\AOIClient\AOIClient\Assets\Plugins\netcoreapp2.1\AOIServer.pdb
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\bin\Debug\netcoreapp2.1\netcoreapp2.1\AOIServer.deps.json
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\bin\Debug\netcoreapp2.1\netcoreapp2.1\AOIServer.runtimeconfig.json
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\bin\Debug\netcoreapp2.1\netcoreapp2.1\AOIServer.runtimeconfig.dev.json
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\bin\Debug\netcoreapp2.1\netcoreapp2.1\AOIServer.dll
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\bin\Debug\netcoreapp2.1\netcoreapp2.1\AOIServer.pdb
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\bin\Debug\netcoreapp2.1\netcoreapp2.1\AOICellProtocol.dll
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\bin\Debug\netcoreapp2.1\netcoreapp2.1\AsyncNet.dll
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\bin\Debug\netcoreapp2.1\netcoreapp2.1\AOICellProtocol.pdb
