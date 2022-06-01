@@ -13,7 +13,6 @@ E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOICellProtocol\bin\D
 E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOICellProtocol\bin\Debug\System.Threading.Overlapped.dll
 E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOICellProtocol\bin\Debug\System.Xml.XPath.XDocument.dll
 E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOICellProtocol\bin\Debug\AsyncNet.dll
-E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOICellProtocol\obj\Debug\AOICellProtocol.csprojAssemblyReference.cache
 E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOICellProtocol\obj\Debug\AOICellProtocol.csproj.CoreCompileInputs.cache
 E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOICellProtocol\obj\Debug\AOICellProtocol.csproj.CopyComplete
 E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOICellProtocol\obj\Debug\AOICellProtocol.dll

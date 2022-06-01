@@ -10,5 +10,11 @@ namespace AOICellProtocol
     [Serializable]
     public class Pkg: AsyncMsg
     {
+        public OperateCode operateCode;
+    }
+    [Serializable]
+    public class Pkg_C2SLogin : Pkg
+    {
+        public string usernName;
     }
 }

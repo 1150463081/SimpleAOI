@@ -54,9 +54,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\GameEntry.cs" />
-    <Compile Include="Assets\Scripts\Net\NetManger.cs" />
-    <Compile Include="Assets\Scripts\Base\MonoSingleton.cs" />
     <Compile Include="Assets\Scripts\Net\ClientSession.cs" />
+    <Compile Include="Assets\Scripts\Base\MonoSingleton.cs" />
+    <Compile Include="Assets\Scripts\Net\NetManager.cs" />
+    <Compile Include="Assets\Scripts\UI\MainPanel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -281,11 +282,11 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>E:\Unity 2020.3.6\2020.3.4f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
-    <Reference Include="PELog">
-      <HintPath>Assets\Plugins\PELog.dll</HintPath>
-    </Reference>
     <Reference Include="AsyncNet">
       <HintPath>Assets\Plugins\netcoreapp2.1\AsyncNet.dll</HintPath>
+    </Reference>
+    <Reference Include="PELog">
+      <HintPath>Assets\Plugins\PELog.dll</HintPath>
     </Reference>
     <Reference Include="AOICellProtocol">
       <HintPath>Assets\Plugins\netcoreapp2.1\AOICellProtocol.dll</HintPath>

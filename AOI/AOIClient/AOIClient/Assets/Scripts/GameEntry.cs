@@ -17,7 +17,7 @@ namespace AOIClient
             };
             PELog.InitSettings(logConfig);
 
-            NetManger.Instance.Init();
+            NetManager.Instance.Init();
         }
     }
 }
