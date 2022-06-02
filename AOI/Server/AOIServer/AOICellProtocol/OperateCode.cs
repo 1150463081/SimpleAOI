@@ -10,6 +10,9 @@ namespace AOICellProtocol
     {
         None=0,
 
-        Login=100,
+        S2CConnect=10,
+
+        C2SLogin=100,
+        S2CLogin=101,
     }
 }

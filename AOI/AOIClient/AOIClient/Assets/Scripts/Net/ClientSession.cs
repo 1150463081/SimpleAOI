@@ -23,7 +23,8 @@ namespace AOIClient
 
         protected override void OnReceiveMsg(Pkg msg)
         {
-            PELog.Log("Recive new msg");
+            PELog.Log("Recive new msg:{0}",msg.operateCode);
+            NetManager.Instance.AddNetPkg(msg);
         }
     }
 }

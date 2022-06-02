@@ -1,2 +1,11 @@
-[L]# 04:31:06-261  ThreadID:5 >> New Client Connect:True
-[L]# 04:31:12-195  ThreadID:5 >> Receive Msg:Login
+[L]# 05:59:03-474  ThreadID:5 >> New Client Connect:True
+[L]# 05:59:07-201  ThreadID:6 >> Receive Msg:C2SLogin
+[L]# 05:59:07-276  ThreadID:3 >> 处理登录消息,用户名lululu
+[L]# 05:59:16-337  ThreadID:6 >> Client DisConnected
+[L]# 05:59:17-464  ThreadID:5 >> New Client Connect:True
+[L]# 05:59:26-065  ThreadID:5 >> Client DisConnected
+[L]# 05:59:27-180  ThreadID:5 >> New Client Connect:True
+[L]# 05:59:30-357  ThreadID:5 >> Receive Msg:C2SLogin
+[L]# 05:59:30-398  ThreadID:3 >> 处理登录消息,用户名lululu
+[L]# 05:59:35-140  ThreadID:5 >> Receive Msg:C2SLogin
+[L]# 05:59:35-187  ThreadID:3 >> 处理登录消息,用户名lululu

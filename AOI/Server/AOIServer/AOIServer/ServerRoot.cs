@@ -13,7 +13,8 @@ namespace AOIServer
         private static ServerRoot instance;
         public static ServerRoot Instance
         {
-            get {
+            get
+            {
                 if (instance == null)
                 {
                     instance = new ServerRoot();
@@ -23,22 +24,37 @@ namespace AOIServer
         }
         AsyncNet<ServerSession, Pkg> asyncNet = new AsyncNet<ServerSession, Pkg>();
         ConcurrentQueue<NetPkg> pkgQueue = new ConcurrentQueue<NetPkg>();
-        Dictionary<OperateCode, Action<NetPkg>> handlerDict = new Dictionary<OperateCode, Action<NetPkg>>();
-        BattleStage battleStage;
+        ConcurrentDictionary<OperateCode, Action<NetPkg>> handlerDict = new ConcurrentDictionary<OperateCode, Action<NetPkg>>();
+        ConcurrentDictionary<string, ServerSession> sessionDict = new ConcurrentDictionary<string, ServerSession>();
+        public BattleStage BattleStage { get; private set; }
+
+
+        private static int index = 1000;
+        public static int SpawnRoleId()
+        {
+            return index++;
+        }
         public void Init()
         {
-            asyncNet.StartAsServer("127.0.0.1",0415);
-            battleStage = new BattleStage();
+            asyncNet.StartAsServer("127.0.0.1", 0415);
+            BattleStage = new BattleStage();
             InitHandler();
         }
         public void Tick()
         {
-            battleStage?.Tick();
+            BattleStage?.Tick();
             while (!pkgQueue.IsEmpty)
             {
-                if(pkgQueue.TryDequeue(out var netPkg))
+                if (pkgQueue.TryDequeue(out var netPkg))
                 {
-
+                    if (handlerDict.TryGetValue(netPkg.pkg.operateCode, out var action))
+                    {
+                        action?.Invoke(netPkg);
+                    }
+                    else
+                    {
+                        PELog.Error($"操作{netPkg.pkg.operateCode}触发失败");
+                    }
                 }
                 else
                 {
@@ -48,15 +64,34 @@ namespace AOIServer
         }
         public void Destroy()
         {
-            battleStage.Destroy();
+            BattleStage.Destroy();
         }
         public void AddNetPkg(NetPkg netPkg)
         {
             pkgQueue.Enqueue(netPkg);
         }
-        public void AddHandler(OperateCode operateCode,Action<NetPkg> handler)
+        public void AddHandler(OperateCode operateCode, Action<NetPkg> handler)
         {
             handlerDict[operateCode] = handler;
+        }
+        public void AddSession(string sessionId, ServerSession session)
+        {
+            sessionDict[sessionId] = session;
+        }
+        public void RemoveSession(string sessionId)
+        {
+            sessionDict.TryRemove(sessionId ,out var session);
+        }
+        public void SendMsg8Session(string sessionId,AsyncMsg msg)
+        {
+            if(sessionDict.TryGetValue(sessionId,out var session))
+            {
+                session.SendMsg(msg);
+            }
+            else
+            {
+                PELog.Error("No Session To [{0}]", sessionId);
+            }
         }
 
         private void InitHandler()

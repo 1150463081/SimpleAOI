@@ -52,4 +52,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetDir)AOICellProtocol.dll"  "E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\AOIClient\AOIClient\Assets\Plugins\netcoreapp2.1"</PostBuildEvent>
+  </PropertyGroup>
 </Project>
