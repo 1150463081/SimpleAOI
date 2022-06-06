@@ -15,7 +15,7 @@ namespace AOIServer
             PELog.Log($"处理登录消息,用户名{pkg.usernName}");
             int roleId = ServerRoot.SpawnRoleId();
             RoleEntity roleEntity = new RoleEntity(roleId);
-            ServerRoot.Instance.BattleStage.AddRoleEntity(roleEntity);
+            ServerRoot.Instance.BattleStage.EnterStage(roleEntity);
             //ServerRoot.Instance.SendMsg8Session(pkg.sessionId, new Pkg_S2CLogin()
             //{
             //    operateCode = OperateCode.S2CLogin,

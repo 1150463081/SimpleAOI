@@ -217,6 +217,15 @@
           "lib/netstandard2.0/PELog.dll": {}
         }
       },
+      "AOICell/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/AOICell.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AOICell.dll": {}
+        }
+      },
       "AOICellProtocol/1.0.0": {
         "type": "project",
         "compile": {
@@ -712,6 +721,11 @@
         "齐齐课圆形Logo(500x500).png"
       ]
     },
+    "AOICell/1.0.0": {
+      "type": "project",
+      "path": "../AOICell/AOICell.csproj",
+      "msbuildProject": "../AOICell/AOICell.csproj"
+    },
     "AOICellProtocol/1.0.0": {
       "type": "project",
       "path": "../AOICellProtocol/AOICellProtocol.csproj",
@@ -720,6 +734,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "AOICell >= 1.0.0",
       "AOICellProtocol >= 1.0.0",
       "Microsoft.NETCore.App >= 2.1.0",
       "PELog >= 1.0.1"
@@ -757,6 +772,9 @@
           "projectReferences": {
             "E:\\UnityProject\\MoMoRpg\\AOI\\SimpleAOI\\AOI\\Server\\AOIServer\\AOICellProtocol\\AOICellProtocol.csproj": {
               "projectPath": "E:\\UnityProject\\MoMoRpg\\AOI\\SimpleAOI\\AOI\\Server\\AOIServer\\AOICellProtocol\\AOICellProtocol.csproj"
+            },
+            "E:\\UnityProject\\MoMoRpg\\AOI\\SimpleAOI\\AOI\\Server\\AOIServer\\AOICell\\AOICell.csproj": {
+              "projectPath": "E:\\UnityProject\\MoMoRpg\\AOI\\SimpleAOI\\AOI\\Server\\AOIServer\\AOICell\\AOICell.csproj"
             }
           }
         }
