@@ -11,6 +11,7 @@ namespace AOIServer
         ConcurrentDictionary<int, RoleEntity> roleDict = new ConcurrentDictionary<int, RoleEntity>();
         AOIMgr AOIMgr;
 
+        //将收到的操作数据收集起来，每一帧批量操作
         private ConcurrentQueue<RoleEntity> exitQueue = new ConcurrentQueue<RoleEntity>();
         private ConcurrentQueue<RoleEntity> enterQueue = new ConcurrentQueue<RoleEntity>();
         private ConcurrentQueue<RoleEntity> moveQueue = new ConcurrentQueue<RoleEntity>();

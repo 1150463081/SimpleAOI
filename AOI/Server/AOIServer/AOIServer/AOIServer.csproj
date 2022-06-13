@@ -10,11 +10,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="BattleStage.cs~RF15cc656b.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="PELog" Version="1.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AOICellProtocol\AOICellProtocol.csproj" />
+    <ProjectReference Include="..\AOICell\AOICell.csproj" />
   </ItemGroup>
 
   <ItemGroup>

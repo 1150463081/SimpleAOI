@@ -31,14 +31,18 @@ namespace AOIServer
         }
         public void OnEnterStage(BattleStage stage)
         {
-
+            RoleState = ERoleState.OnLine;
         }
         public void OnUpdateStage(BattleStage stage)
         {
+            if(RoleState== ERoleState.OnLine)
+            {
 
+            }
         }
         public void OnExitStage(BattleStage stage)
         {
+            RoleState = ERoleState.OffLine;
             AOIEntity = null;
         }
     }

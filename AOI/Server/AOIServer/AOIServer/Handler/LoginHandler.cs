@@ -16,11 +16,6 @@ namespace AOIServer
             int roleId = ServerRoot.SpawnRoleId();
             RoleEntity roleEntity = new RoleEntity(roleId);
             ServerRoot.Instance.BattleStage.EnterStage(roleEntity);
-            //ServerRoot.Instance.SendMsg8Session(pkg.sessionId, new Pkg_S2CLogin()
-            //{
-            //    operateCode = OperateCode.S2CLogin,
-            //    roleId = roleId
-            //});
             session.SendMsg(new Pkg_S2CLogin()
             {
                 operateCode = OperateCode.S2CLogin,
