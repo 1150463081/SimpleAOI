@@ -20,6 +20,9 @@ namespace AOICell
         public string LastCellKey { get; private set; } = "";
         public float PosX { get; private set; } 
         public float PosZ { get; private set; } 
+        public EMoveType MoveType { get; private set; }
+
+        private AOICell[] aroundCell = null;
 
         public AOIEntity(int entityId,AOIMgr mgr)
         {
@@ -27,7 +30,7 @@ namespace AOICell
             this.mgr = mgr;
         }
         
-        public void UpdatePos(float x,float z)
+        public void UpdatePos(float x,float z,EMoveType moveType= EMoveType.None)
         {
             PosX = x;
             PosZ = z;
@@ -45,12 +48,33 @@ namespace AOICell
                 ZIndex = _zIndex;
                 CellKey = _cellKey;
 
+                MoveType = moveType;
+
+                if (MoveType != EMoveType.TransferEnter&& MoveType != EMoveType.TransferOut)
+                {
+                    moveType = EMoveType.MoveCross;
+                }
+
                 mgr.MoveCrossCell(this);
             }
             else
             {
+                MoveType = EMoveType.MoveInside;
                 mgr.MoveInsideCell(this);
             }
         }
+
+        public void SetAroundCell(AOICell[] around)
+        {
+            aroundCell = around;
+        }
+    }
+    public enum EMoveType
+    {
+        None,
+        TransferEnter,
+        TransferOut,
+        MoveInside,
+        MoveCross
     }
 }

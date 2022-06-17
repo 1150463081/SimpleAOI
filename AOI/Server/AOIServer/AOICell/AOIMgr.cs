@@ -60,7 +60,7 @@ namespace AOICell
             }
             else
             {
-
+                PELog.Error($"不存在地图块[{entity.XIndex},{entity.ZIndex}]");
             }
         }
 
