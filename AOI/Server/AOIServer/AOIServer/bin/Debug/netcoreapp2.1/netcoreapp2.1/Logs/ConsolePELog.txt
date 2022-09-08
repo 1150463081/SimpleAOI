@@ -1,11 +1,93 @@
-[L]# 05:59:03-474  ThreadID:5 >> New Client Connect:True
-[L]# 05:59:07-201  ThreadID:6 >> Receive Msg:C2SLogin
-[L]# 05:59:07-276  ThreadID:3 >> 处理登录消息,用户名lululu
-[L]# 05:59:16-337  ThreadID:6 >> Client DisConnected
-[L]# 05:59:17-464  ThreadID:5 >> New Client Connect:True
-[L]# 05:59:26-065  ThreadID:5 >> Client DisConnected
-[L]# 05:59:27-180  ThreadID:5 >> New Client Connect:True
-[L]# 05:59:30-357  ThreadID:5 >> Receive Msg:C2SLogin
-[L]# 05:59:30-398  ThreadID:3 >> 处理登录消息,用户名lululu
-[L]# 05:59:35-140  ThreadID:5 >> Receive Msg:C2SLogin
-[L]# 05:59:35-187  ThreadID:3 >> 处理登录消息,用户名lululu
+[L]# 03:46:56-559  ThreadID:5 >> New Client Connect:True
+[L]# 03:46:59-656  ThreadID:5 >> Receive Msg:C2SLogin
+[L]# 03:46:59-725  ThreadID:3 >> 处理登录消息,用户名lululu
+[L]# 03:46:59-915  ThreadID:3 >> OpCombine:1
+[L]# 03:47:00-079  ThreadID:3 >> ValueChange:1
+[L]# 03:47:00-196  ThreadID:3 >> ValueChange:1
+[L]# 03:47:00-330  ThreadID:3 >> ValueChange:1
+[L]# 03:47:00-445  ThreadID:3 >> ValueChange:1
+[L]# 03:47:00-587  ThreadID:3 >> ValueChange:1
+[L]# 03:47:00-717  ThreadID:3 >> ValueChange:1
+[L]# 03:47:00-845  ThreadID:3 >> ValueChange:1
+[L]# 03:47:00-953  ThreadID:3 >> ValueChange:1
+[L]# 03:47:01-062  ThreadID:3 >> ValueChange:1
+[L]# 03:47:01-171  ThreadID:3 >> ValueChange:1
+[L]# 03:47:01-293  ThreadID:3 >> ValueChange:1
+[L]# 03:47:01-404  ThreadID:3 >> ValueChange:1
+[L]# 03:47:01-512  ThreadID:3 >> ValueChange:1
+[L]# 03:47:01-619  ThreadID:3 >> ValueChange:1
+[L]# 03:47:01-733  ThreadID:3 >> ValueChange:1
+[L]# 03:47:01-848  ThreadID:3 >> ValueChange:1
+[L]# 03:47:01-959  ThreadID:3 >> ValueChange:1
+[L]# 03:47:02-071  ThreadID:3 >> ValueChange:1
+[L]# 03:47:02-178  ThreadID:3 >> ValueChange:1
+[L]# 03:47:02-286  ThreadID:3 >> ValueChange:1
+[L]# 03:47:02-396  ThreadID:3 >> ValueChange:1
+[L]# 03:47:02-504  ThreadID:3 >> ValueChange:1
+[L]# 03:47:02-615  ThreadID:3 >> ValueChange:1
+[L]# 03:47:02-720  ThreadID:3 >> ValueChange:1
+[L]# 03:47:02-827  ThreadID:3 >> ValueChange:1
+[L]# 03:47:02-936  ThreadID:3 >> ValueChange:1
+[L]# 03:47:03-044  ThreadID:3 >> ValueChange:1
+[L]# 03:47:03-153  ThreadID:3 >> ValueChange:1
+[L]# 03:47:03-261  ThreadID:3 >> ValueChange:1
+[L]# 03:47:03-367  ThreadID:3 >> ValueChange:1
+[L]# 03:47:03-479  ThreadID:3 >> ValueChange:1
+[L]# 03:47:03-583  ThreadID:3 >> ValueChange:1
+[L]# 03:47:03-695  ThreadID:3 >> ValueChange:1
+[L]# 03:47:03-826  ThreadID:3 >> ValueChange:1
+[L]# 03:47:03-940  ThreadID:3 >> ValueChange:1
+[L]# 03:47:04-087  ThreadID:3 >> ValueChange:1
+[L]# 03:47:04-201  ThreadID:3 >> ValueChange:1
+[L]# 03:47:04-311  ThreadID:3 >> ValueChange:1
+[L]# 03:47:04-417  ThreadID:3 >> ValueChange:1
+[L]# 03:47:04-524  ThreadID:3 >> ValueChange:1
+[L]# 03:47:04-644  ThreadID:3 >> ValueChange:1
+[L]# 03:47:04-753  ThreadID:3 >> ValueChange:1
+[L]# 03:47:04-863  ThreadID:3 >> ValueChange:1
+[L]# 03:47:04-981  ThreadID:3 >> ValueChange:1
+[L]# 03:47:05-104  ThreadID:3 >> ValueChange:1
+[L]# 03:47:05-213  ThreadID:3 >> ValueChange:1
+[L]# 03:47:05-319  ThreadID:3 >> ValueChange:1
+[L]# 03:47:05-429  ThreadID:3 >> ValueChange:1
+[L]# 03:47:05-534  ThreadID:3 >> ValueChange:1
+[L]# 03:47:05-643  ThreadID:3 >> ValueChange:1
+[L]# 03:47:05-752  ThreadID:3 >> ValueChange:1
+[L]# 03:47:05-859  ThreadID:3 >> ValueChange:1
+[L]# 03:47:05-967  ThreadID:3 >> ValueChange:1
+[L]# 03:47:06-082  ThreadID:3 >> ValueChange:1
+[L]# 03:47:06-200  ThreadID:3 >> ValueChange:1
+[L]# 03:47:06-309  ThreadID:3 >> ValueChange:1
+[L]# 03:47:06-436  ThreadID:3 >> ValueChange:1
+[L]# 03:47:06-585  ThreadID:3 >> ValueChange:1
+[L]# 03:47:06-695  ThreadID:3 >> ValueChange:1
+[L]# 03:47:06-817  ThreadID:3 >> ValueChange:1
+[L]# 03:47:06-954  ThreadID:3 >> ValueChange:1
+[L]# 03:47:07-067  ThreadID:3 >> ValueChange:1
+[L]# 03:47:07-182  ThreadID:3 >> ValueChange:1
+[L]# 03:47:07-289  ThreadID:3 >> ValueChange:1
+[L]# 03:47:07-400  ThreadID:3 >> ValueChange:1
+[L]# 03:47:07-598  ThreadID:3 >> ValueChange:1
+[L]# 03:47:07-711  ThreadID:3 >> ValueChange:1
+[L]# 03:47:07-820  ThreadID:3 >> ValueChange:1
+[L]# 03:47:07-933  ThreadID:3 >> ValueChange:1
+[L]# 03:47:08-055  ThreadID:3 >> ValueChange:1
+[L]# 03:47:08-163  ThreadID:3 >> ValueChange:1
+[L]# 03:47:08-270  ThreadID:3 >> ValueChange:1
+[L]# 03:47:08-380  ThreadID:3 >> ValueChange:1
+[L]# 03:47:08-504  ThreadID:3 >> ValueChange:1
+[L]# 03:47:08-610  ThreadID:3 >> ValueChange:1
+[L]# 03:47:08-719  ThreadID:3 >> ValueChange:1
+[L]# 03:47:08-830  ThreadID:3 >> ValueChange:1
+[L]# 03:47:08-933  ThreadID:3 >> ValueChange:1
+[L]# 03:47:09-075  ThreadID:3 >> ValueChange:1
+[L]# 03:47:09-218  ThreadID:3 >> ValueChange:1
+[L]# 03:47:09-319  ThreadID:3 >> ValueChange:1
+[L]# 03:47:09-431  ThreadID:3 >> ValueChange:1
+[L]# 03:47:09-540  ThreadID:3 >> ValueChange:1
+[L]# 03:47:09-645  ThreadID:3 >> ValueChange:1
+[L]# 03:47:09-755  ThreadID:3 >> ValueChange:1
+[L]# 03:47:09-877  ThreadID:3 >> ValueChange:1
+[L]# 03:47:09-985  ThreadID:3 >> ValueChange:1
+[L]# 03:47:10-091  ThreadID:3 >> ValueChange:1
+[L]# 03:47:10-199  ThreadID:3 >> ValueChange:1

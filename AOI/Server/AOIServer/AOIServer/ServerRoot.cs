@@ -26,6 +26,7 @@ namespace AOIServer
         ConcurrentQueue<NetPkg> pkgQueue = new ConcurrentQueue<NetPkg>();
         ConcurrentDictionary<OperateCode, Action<NetPkg>> handlerDict = new ConcurrentDictionary<OperateCode, Action<NetPkg>>();
         ConcurrentDictionary<string, ServerSession> sessionDict = new ConcurrentDictionary<string, ServerSession>();
+        //场景关卡
         public BattleStage BattleStage { get; private set; }
 
 
@@ -38,6 +39,7 @@ namespace AOIServer
         {
             asyncNet.StartAsServer("127.0.0.1", 0415);
             BattleStage = new BattleStage();
+            BattleStage.Init();
             InitHandler();
         }
         public void Tick()
@@ -47,9 +49,9 @@ namespace AOIServer
             {
                 if (pkgQueue.TryDequeue(out var netPkg))
                 {
-                    if (handlerDict.TryGetValue(netPkg.pkg.operateCode, out var action))
+                    if (handlerDict.TryGetValue(netPkg.pkg.operateCode, out var handler))
                     {
-                        action?.Invoke(netPkg);
+                        handler?.Invoke(netPkg);
                     }
                     else
                     {

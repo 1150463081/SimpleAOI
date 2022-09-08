@@ -18,6 +18,8 @@ namespace AOIClient
             PELog.InitSettings(logConfig);
 
             NetManager.Instance.Init();
+            RoleManager.Instance.Init();
+            AOICellManager.Instance.Init();
         }
     }
 }

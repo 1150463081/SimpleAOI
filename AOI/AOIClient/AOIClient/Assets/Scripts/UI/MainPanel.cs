@@ -34,6 +34,7 @@ namespace AOIClient {
         {
             Pkg_S2CLogin mPkg = pkg as Pkg_S2CLogin;
             txt_id.text = mPkg.roleId.ToString();
+            RoleManager.Instance.SetMyRoleId(mPkg.roleId);
         }
     }
 }

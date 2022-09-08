@@ -7,7 +7,7 @@ using PEUtils;
 
 namespace AOICell
 { 
-    //核心思路，存量增删，增量叠加
+    //核心思路，存量增删(针对AOIEntity)，增量叠加(针对AOICell)
     public class AOICfg
     {
         public int cellSize = 20;
@@ -17,10 +17,13 @@ namespace AOICell
     {
         public int CellSize => aoiCfg.cellSize;
         public int CellCount => aoiCfg.cellCount;
+        public Action<AOIEntity, CellUpdateData> EntityViewChangeEvent;
+        public Action<AOICell, CellUpdateData> CellEntityOpCombineEvent;
 
         private Dictionary<string, AOICell> cellDict;
         private List<AOIEntity> entityList;
         private AOICfg aoiCfg;
+
         public AOIMgr(AOICfg cfg)
         {
             aoiCfg = cfg;
@@ -30,15 +33,40 @@ namespace AOICell
 
         public AOIEntity EnterCell(int entityId,float x,float z)
         {
-            return null;
+            AOIEntity entity = new AOIEntity(entityId, this);
+            entity.UpdatePos(x, z, EMoveType.TransferEnter);
+            entityList.Add(entity);
+            return entity;
         }
         public void ExitCell(AOIEntity entity)
         {
-
+            if(cellDict.TryGetValue(entity.CellKey,out var cell))
+            {
+                cell.ExitCell(entity);
+                entityList.Remove(entity);
+            }
         }
-        public void UpdatePos(int entityId, float x, float z)
+        public void UpdatePos(AOIEntity entity, float x, float z)
         {
-
+            entity.UpdatePos(x, z);
+        }
+        public void CalcuateAOIUpdate()
+        {
+            //驱动实体视野更新,存量增删
+            for (int i = 0; i < entityList.Count; i++)
+            {
+                entityList[i].CalculateViewChange();
+            }
+            //驱动每个宫格周围宫格操作更新
+            foreach (var cell in cellDict.Values)
+            {
+                if (cell.EnterEntity.Count > 0)
+                {
+                    cell.HoldEntity.UnionWith(cell.EnterEntity);
+                    cell.EnterEntity.Clear();
+                }
+                cell.CalcCellOpCombine();
+            }
         }
         //某个实体穿越了边界 
         public void MoveCrossCell(AOIEntity entity)

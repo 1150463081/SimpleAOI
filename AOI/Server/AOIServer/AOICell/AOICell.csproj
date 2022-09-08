@@ -47,6 +47,7 @@
     <Compile Include="AOICell.cs" />
     <Compile Include="AOIEntity.cs" />
     <Compile Include="AOIMgr.cs" />
+    <Compile Include="CellUpdateData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

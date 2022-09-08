@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using System.Text;
 using AOICell;
+using AOICellProtocol;
 
 namespace AOIServer
 {
@@ -19,11 +20,13 @@ namespace AOIServer
         public ERoleState RoleState { get; private set; }
         public AOIEntity AOIEntity { get; private set; }
         public Vector3 TargetPos { get; private set; }
+        public ServerSession session { get; private set; }
 
-        public RoleEntity(int roleId)
+        public RoleEntity(int roleId,ServerSession serverSession)
         {
             RoleId = roleId;
             RoleState = ERoleState.OnLine;
+            this.session = serverSession;
         }
         public void SetAOIEntity(AOIEntity entity)
         {
@@ -33,11 +36,11 @@ namespace AOIServer
         {
             RoleState = ERoleState.OnLine;
         }
-        public void OnUpdateStage(BattleStage stage)
+        public void OnUpdateStage(Pkg pkg)
         {
             if(RoleState== ERoleState.OnLine)
             {
-
+                session?.SendMsg(pkg);
             }
         }
         public void OnExitStage(BattleStage stage)

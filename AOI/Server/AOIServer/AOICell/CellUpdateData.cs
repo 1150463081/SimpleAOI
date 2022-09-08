@@ -11,6 +11,11 @@ namespace AOICell
         public List<EnterData> enterList;
         public List<MoveData> moveList;
         public List<ExitData> exitList;
+
+        public bool IsEmpty => enterList.Count == 0 &&
+                                moveList.Count == 0 &&
+                                exitList.Count == 0;
+
         public CellUpdateData()
         {
             enterList = new List<EnterData>();
@@ -27,9 +32,9 @@ namespace AOICell
     public struct EnterData
     {
         public int Id;
-        public int x;
-        public int z;
-        public EnterData(int id,int x,int z)
+        public float x;
+        public float z;
+        public EnterData(int id, float x, float z)
         {
             this.Id = id;
             this.x = x;
@@ -39,9 +44,9 @@ namespace AOICell
     public struct MoveData
     {
         public int Id;
-        public int x;
-        public int z;
-        public MoveData(int id, int x, int z)
+        public float x;
+        public float z;
+        public MoveData(int id, float x, float z)
         {
             this.Id = id;
             this.x = x;

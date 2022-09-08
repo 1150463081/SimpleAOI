@@ -14,7 +14,9 @@ namespace AOICell
         private AOIMgr mgr;
         private AOICell[] AOIGround = null;
         public CellUpdateData CellUpdateData { get; private set; }
-
+        public HashSet<AOIEntity> HoldEntity { get; private set; }
+        //新进入的实体，待实体存量增删完成后再加入HoldEntity
+        public HashSet<AOIEntity> EnterEntity { get; private set; }
 
         public AOICell(int xIndex, int zIndex, AOIMgr mgr)
         {
@@ -22,9 +24,16 @@ namespace AOICell
             ZIndex = zIndex;
             this.mgr = mgr;
             CellUpdateData = new CellUpdateData();
+            HoldEntity = new HashSet<AOIEntity>();
+            EnterEntity = new HashSet<AOIEntity>();
         }
         public void EnterCell(AOIEntity entity)
         {
+            if (!EnterEntity.Add(entity))
+            {
+                this.Error($"EnterEntity Add Err:{entity.EntityId}");
+                return;
+            }   
             if (entity.MoveType == EMoveType.TransferEnter)
             {
                 entity.SetAroundCell(AOIGround);
@@ -45,6 +54,14 @@ namespace AOICell
         public void MoveCell(AOIEntity entity)
         {
 
+        }
+        public void ExitCell(AOIEntity entity)
+        {
+            for (int i = 0; i < AOIGround.Length; i++)
+            {
+                AOIGround[i].AddCellOperate(ECellOperate.EntityExit, entity);
+            }
+            HoldEntity.Remove(entity);
         }
         public void AddCellOperate(ECellOperate cellOperate, AOIEntity entity)
         {
@@ -86,6 +103,15 @@ namespace AOICell
                 }
             }
             IsCalcuBoundary = true;
+        }
+        //合并当前格所有的操作指令，告知客户端
+        public void CalcCellOpCombine()
+        {
+            if (!CellUpdateData.IsEmpty)
+            {
+                mgr.CellEntityOpCombineEvent(this, CellUpdateData);
+                CellUpdateData.Clear();
+            }
         }
     }
 

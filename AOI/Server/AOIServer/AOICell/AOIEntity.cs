@@ -22,12 +22,15 @@ namespace AOICell
         public float PosZ { get; private set; } 
         public EMoveType MoveType { get; private set; }
 
+        private CellUpdateData entityUpdateData;
+        //存量视野九宫格
         private AOICell[] aroundCell = null;
 
         public AOIEntity(int entityId,AOIMgr mgr)
         {
             EntityId = entityId;
             this.mgr = mgr;
+            entityUpdateData = new CellUpdateData();
         }
         
         public void UpdatePos(float x,float z,EMoveType moveType= EMoveType.None)
@@ -35,6 +38,7 @@ namespace AOICell
             PosX = x;
             PosZ = z;
 
+            //计算所在格二维坐标
             int _xIndex = (int)Math.Floor(PosX / mgr.CellSize);
             int _zIndex = (int)Math.Floor(PosZ / mgr.CellSize);
             string _cellKey = $"{_xIndex},{_zIndex}";
@@ -63,6 +67,27 @@ namespace AOICell
                 mgr.MoveInsideCell(this);
             }
         }
+        //对实体宫格视野存量进行增删变化
+        public void CalculateViewChange()
+        {
+            if (aroundCell != null)
+            {
+                for (int i = 0; i < aroundCell.Length; i++)
+                {
+                    var set = aroundCell[i].HoldEntity;
+                    foreach (var e in set)
+                    {
+                        entityUpdateData.enterList.Add(new EnterData(e.EntityId, e.PosX, e.PosZ));
+                    }
+                }
+                if (!entityUpdateData.IsEmpty)
+                {
+                    mgr.EntityViewChangeEvent?.Invoke(this, entityUpdateData);
+                    entityUpdateData.Clear();
+                }
+            }
+            aroundCell = null;
+        }
 
         public void SetAroundCell(AOICell[] around)
         {
@@ -72,9 +97,9 @@ namespace AOICell
     public enum EMoveType
     {
         None,
-        TransferEnter,
-        TransferOut,
-        MoveInside,
-        MoveCross
+        TransferEnter,//传送进入
+        TransferOut,//传送离开
+        MoveInside,//在格子内移动
+        MoveCross//跨格移动
     }
 }

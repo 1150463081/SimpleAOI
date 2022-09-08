@@ -25,3 +25,5 @@ E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\bin\Debug\n
 E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\bin\Debug\netcoreapp2.1\netcoreapp2.1\AOICellProtocol.dll
 E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\bin\Debug\netcoreapp2.1\netcoreapp2.1\AsyncNet.dll
 E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\bin\Debug\netcoreapp2.1\netcoreapp2.1\AOICellProtocol.pdb
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\bin\Debug\netcoreapp2.1\netcoreapp2.1\AOICell.dll
+E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOIServer\bin\Debug\netcoreapp2.1\netcoreapp2.1\AOICell.pdb

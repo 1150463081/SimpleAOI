@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v2.1": {
       "AOIServer/1.0.0": {
         "dependencies": {
+          "AOICell": "1.0.0",
           "AOICellProtocol": "1.0.0",
           "PELog": "1.0.1",
           "AsyncNet": "1.0.0.0"
@@ -22,6 +23,11 @@
             "assemblyVersion": "1.0.1.0",
             "fileVersion": "1.0.1.0"
           }
+        }
+      },
+      "AOICell/1.0.0": {
+        "runtime": {
+          "AOICell.dll": {}
         }
       },
       "AOICellProtocol/1.0.0": {
@@ -51,6 +57,11 @@
       "sha512": "sha512-EFy1lb6PV8Om8cAPD1epxiIQm2+H8eqEWpmk+LN0djdvzxFfbO9HzkJSoA72u6qNTJberWyVToYdIHfN4O0xQQ==",
       "path": "pelog/1.0.1",
       "hashPath": "pelog.1.0.1.nupkg.sha512"
+    },
+    "AOICell/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "AOICellProtocol/1.0.0": {
       "type": "project",

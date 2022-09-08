@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Collections.Concurrent;
 using AOICell;
+using AOICellProtocol;
 
 namespace AOIServer
 {
@@ -19,6 +20,8 @@ namespace AOIServer
         public void Init()
         {
             AOIMgr = new AOIMgr(new AOICfg());
+            AOIMgr.EntityViewChangeEvent += EntityValueChangeHandler;
+            AOIMgr.CellEntityOpCombineEvent += CellEntityOpCombineHandler;
         }
         public void Tick()
         {
@@ -49,8 +52,9 @@ namespace AOIServer
             }
             while (moveQueue.TryDequeue(out var role))
             {
-                role.OnUpdateStage(this);
+                //role.OnUpdateStage(this);
             }
+            AOIMgr.CalcuateAOIUpdate();
         }
         public void Destroy()
         {
@@ -92,6 +96,84 @@ namespace AOIServer
             else
             {
                 this.Error($"{role.RoleId}is not exist...");
+            }
+        }
+
+        private void EntityValueChangeHandler(AOIEntity entity,CellUpdateData cellUpdateData)
+        {
+            Pkg_S2CUpdateAOI pkg = new Pkg_S2CUpdateAOI()
+            {
+                enterList = new List<EnterMsg>(),
+                exitList = new List<ExitMsg>(),
+                operateCode = OperateCode.S2CUpdateAOI,
+            };
+            if (cellUpdateData.enterList.Count > 0)
+            {
+                for (int i = 0; i < cellUpdateData.enterList.Count; i++)
+                {
+                    pkg.enterList.Add(new EnterMsg()
+                    {
+                        entitiyId = cellUpdateData.enterList[i].Id,
+                        PosX = cellUpdateData.enterList[i].x,
+                        PosZ = cellUpdateData.enterList[i].z
+                    });
+                }
+            }
+            if (cellUpdateData.exitList.Count > 0)
+            {
+                for (int i = 0; i < cellUpdateData.exitList.Count; i++)
+                {
+                    pkg.exitList.Add(new ExitMsg()
+                    {
+                        entitiyId = cellUpdateData.enterList[i].Id,
+                    });
+                }
+            }
+            if(roleDict.TryGetValue(entity.EntityId,out var role))
+            {
+                role.OnUpdateStage(pkg);
+                this.Log($"ValueChange:{pkg.enterList.Count}");
+            }
+
+        }
+        private void CellEntityOpCombineHandler(AOICell.AOICell cell,CellUpdateData cellUpdateData)
+        {
+            Pkg_S2CUpdateAOI pkg = new Pkg_S2CUpdateAOI()
+            {
+                enterList = new List<EnterMsg>(),
+                exitList = new List<ExitMsg>(),
+                operateCode = OperateCode.S2CUpdateAOI,
+            };
+            if (cellUpdateData.enterList.Count > 0)
+            {
+                for (int i = 0; i < cellUpdateData.enterList.Count; i++)
+                {
+                    pkg.enterList.Add(new EnterMsg()
+                    {
+                        entitiyId = cellUpdateData.enterList[i].Id,
+                        PosX = cellUpdateData.enterList[i].x,
+                        PosZ = cellUpdateData.enterList[i].z
+                    });
+                }
+            }
+            if (cellUpdateData.exitList.Count > 0)
+            {
+                for (int i = 0; i < cellUpdateData.exitList.Count; i++)
+                {
+                    pkg.exitList.Add(new ExitMsg()
+                    {
+                        entitiyId = cellUpdateData.enterList[i].Id,
+                    });
+                }
+            }
+
+            foreach (var entity in cell.HoldEntity)
+            {
+                if (roleDict.TryGetValue(entity.EntityId, out var role))
+                {
+                    role.OnUpdateStage(pkg);
+                    this.Log($"OpCombine:{pkg.enterList.Count}");
+                }
             }
         }
     }

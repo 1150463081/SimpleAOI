@@ -53,7 +53,12 @@
     <UnityVersion>2020.3.4f1c1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Role\RoleEntity.cs" />
     <Compile Include="Assets\Scripts\GameEntry.cs" />
+    <Compile Include="Assets\Scripts\AOICell\CellEntity.cs" />
+    <Compile Include="Assets\Scripts\Pool\Pool.cs" />
+    <Compile Include="Assets\Scripts\AOICell\AOICellManager.cs" />
+    <Compile Include="Assets\Scripts\Role\RoleManager.cs" />
     <Compile Include="Assets\Scripts\Net\ClientSession.cs" />
     <Compile Include="Assets\Scripts\Base\MonoSingleton.cs" />
     <Compile Include="Assets\Scripts\Net\NetManager.cs" />
