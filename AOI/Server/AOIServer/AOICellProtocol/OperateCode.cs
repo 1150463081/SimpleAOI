@@ -20,5 +20,8 @@ namespace AOICellProtocol
 
         //更新位置信息
         C2SEntityMove=120,
+
+        //玩家离开
+        C2SEntiyExit=131
     }
 }

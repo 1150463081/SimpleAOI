@@ -19,7 +19,7 @@ namespace AOIServer
 
         public void Init()
         {
-            AOIMgr = new AOIMgr(new AOICfg());
+            AOIMgr = new AOIMgr();
             AOIMgr.EntityViewChangeEvent += EntityValueChangeHandler;
             AOIMgr.CellEntityOpCombineEvent += CellEntityOpCombineHandler;
         }
@@ -52,7 +52,7 @@ namespace AOIServer
             }
             while (moveQueue.TryDequeue(out var role))
             {
-                //role.OnUpdateStage(this);
+                AOIMgr.UpdatePos(role.AOIEntity, role.TargetPos.X, role.TargetPos.Z);
             }
             AOIMgr.CalcuateAOIUpdate();
         }
@@ -97,6 +97,14 @@ namespace AOIServer
             {
                 this.Error($"{role.RoleId}is not exist...");
             }
+        }
+        public bool TryGetRole(int roleId,out RoleEntity role)
+        {
+            if(roleDict.TryGetValue(roleId,out role))
+            {
+                return true;
+            }
+            return false;
         }
 
         private void EntityValueChangeHandler(AOIEntity entity,CellUpdateData cellUpdateData)
@@ -176,5 +184,7 @@ namespace AOIServer
                 }
             }
         }
+
+
     }
 }

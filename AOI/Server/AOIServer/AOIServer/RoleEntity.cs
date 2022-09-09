@@ -19,7 +19,7 @@ namespace AOIServer
         public int RoleId { get; private set; }
         public ERoleState RoleState { get; private set; }
         public AOIEntity AOIEntity { get; private set; }
-        public Vector3 TargetPos { get; private set; }
+        public Vector3 TargetPos { get; set; }
         public ServerSession session { get; private set; }
 
         public RoleEntity(int roleId,ServerSession serverSession)

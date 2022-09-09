@@ -15,6 +15,8 @@ namespace AOIClient
         private GameObject prefab;
 
         public int MyRoleId { get; private set; }
+        public RoleEntity MainPlayer { get; private set; }
+        private Pkg_S2CLogin mLoginPkg;
 
         protected override void OnInit()
         {
@@ -43,6 +45,10 @@ namespace AOIClient
             role.gameObject.name = roleId.ToString();
             roleDict[roleId] = role;
             role.UpdatePos(posX, posZ);
+            if (roleId == MyRoleId)
+            {
+                MainPlayer = role;
+            }
         }
         public void RemoveRole(int roleId)
         {
@@ -60,9 +66,32 @@ namespace AOIClient
             }
             return null;
         }
-        public void SetMyRoleId(int roleId)
+        public void SetMyRoleData(Pkg_S2CLogin pkg)
         {
-            MyRoleId = roleId;
+            mLoginPkg = pkg;
+            MyRoleId = pkg.roleId;
+        }
+
+        private void FixedUpdate()
+        {
+            if (MyRoleId != 0 && MainPlayer != null)
+            {
+                float x = Input.GetAxis("Horizontal");
+                float y = Input.GetAxis("Vertical");
+                Vector3 dir = new Vector3(x, 0, y);
+                if (dir != Vector3.zero)
+                {
+                    MainPlayer.gameObject.transform.position += dir * mLoginPkg.moveSpeed * Time.fixedDeltaTime;
+                    Pkg_C2SEntityMove pkg = new Pkg_C2SEntityMove()
+                    {
+                        operateCode = OperateCode.C2SEntityMove,
+                        entityId = MyRoleId,
+                        posX = MainPlayer.gameObject.transform.position.x,
+                        posY = MainPlayer.gameObject.transform.position.z
+                    };
+                    NetManager.Instance.SendMsg(pkg);
+                }
+            }
         }
     }
 }

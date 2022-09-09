@@ -8,26 +8,25 @@ using PEUtils;
 namespace AOICell
 { 
     //核心思路，存量增删(针对AOIEntity)，增量叠加(针对AOICell)
-    public class AOICfg
+    public static class AOICfg
     {
-        public int cellSize = 20;
-        public int cellCount = 100;
+        public static int cellSize = 20;
+        public static int cellCount = 100;
+        public static int moveSpeed = 40;
     }
     public class AOIMgr
     {
-        public int CellSize => aoiCfg.cellSize;
-        public int CellCount => aoiCfg.cellCount;
+        public int CellSize => AOICfg.cellSize;
+        public int CellCount => AOICfg.cellCount;
         public Action<AOIEntity, CellUpdateData> EntityViewChangeEvent;
         public Action<AOICell, CellUpdateData> CellEntityOpCombineEvent;
 
-        private Dictionary<string, AOICell> cellDict;
+        public Dictionary<string, AOICell> CellDict;
         private List<AOIEntity> entityList;
-        private AOICfg aoiCfg;
 
-        public AOIMgr(AOICfg cfg)
+        public AOIMgr()
         {
-            aoiCfg = cfg;
-            cellDict = new Dictionary<string, AOICell>();
+            CellDict = new Dictionary<string, AOICell>();
             entityList = new List<AOIEntity>();
         }
 
@@ -40,7 +39,7 @@ namespace AOICell
         }
         public void ExitCell(AOIEntity entity)
         {
-            if(cellDict.TryGetValue(entity.CellKey,out var cell))
+            if(CellDict.TryGetValue(entity.CellKey,out var cell))
             {
                 cell.ExitCell(entity);
                 entityList.Remove(entity);
@@ -58,7 +57,7 @@ namespace AOICell
                 entityList[i].CalculateViewChange();
             }
             //驱动每个宫格周围宫格操作更新
-            foreach (var cell in cellDict.Values)
+            foreach (var cell in CellDict.Values)
             {
                 if (cell.EnterEntity.Count > 0)
                 {
@@ -95,24 +94,24 @@ namespace AOICell
         public AOICell GetOrCreateCell(int xIndex, int zIndex)
         {
             var key = GetCellKey(xIndex, zIndex);
-            if (!cellDict.ContainsKey(key))
+            if (!CellDict.ContainsKey(key))
             {
                 CreateCell(xIndex, zIndex);
             }
-            return cellDict[key];
+            return CellDict[key];
         }
         public bool HasCell(int xIndex,int zIndex)
         {
             var key = GetCellKey(xIndex, zIndex);
-            return cellDict.ContainsKey(key);
+            return CellDict.ContainsKey(key);
         }
         public void CreateCell(int xIndex, int zIndex)
         {
             var key = GetCellKey(xIndex, zIndex);
-            if (!cellDict.TryGetValue(key, out var cell))
+            if (!CellDict.TryGetValue(key, out var cell))
             {
                 cell = new AOICell(xIndex, zIndex, this);
-                cellDict[key] = cell;
+                CellDict[key] = cell;
             }
         }
         public string GetCellKey(int xIndex,int zIndex)

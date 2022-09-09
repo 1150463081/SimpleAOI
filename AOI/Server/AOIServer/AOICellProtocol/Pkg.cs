@@ -28,6 +28,7 @@ namespace AOICellProtocol
     public class Pkg_S2CLogin : Pkg
     {
         public int roleId;
+        public int moveSpeed;
     }
     [Serializable]
     public class Pkg_S2CUpdateAOI : Pkg
@@ -62,5 +63,10 @@ namespace AOICellProtocol
         public int entityId;
         public float posX;
         public float posY;
+    }
+    [Serializable]
+    public class Pkg_C2SEntityExit : Pkg
+    {
+        public int entityId;
     }
 }

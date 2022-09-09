@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using AOICellProtocol;
 using PEUtils;
+using AOICell;
 
 namespace AOIServer
 {
@@ -19,7 +20,8 @@ namespace AOIServer
             session.SendMsg(new Pkg_S2CLogin()
             {
                 operateCode = OperateCode.S2CLogin,
-                roleId = roleId
+                roleId = roleId,
+                moveSpeed = AOICfg.moveSpeed
             });
         }
     }

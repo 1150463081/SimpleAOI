@@ -1,93 +1,426 @@
-[L]# 03:46:56-559  ThreadID:5 >> New Client Connect:True
-[L]# 03:46:59-656  ThreadID:5 >> Receive Msg:C2SLogin
-[L]# 03:46:59-725  ThreadID:3 >> 处理登录消息,用户名lululu
-[L]# 03:46:59-915  ThreadID:3 >> OpCombine:1
-[L]# 03:47:00-079  ThreadID:3 >> ValueChange:1
-[L]# 03:47:00-196  ThreadID:3 >> ValueChange:1
-[L]# 03:47:00-330  ThreadID:3 >> ValueChange:1
-[L]# 03:47:00-445  ThreadID:3 >> ValueChange:1
-[L]# 03:47:00-587  ThreadID:3 >> ValueChange:1
-[L]# 03:47:00-717  ThreadID:3 >> ValueChange:1
-[L]# 03:47:00-845  ThreadID:3 >> ValueChange:1
-[L]# 03:47:00-953  ThreadID:3 >> ValueChange:1
-[L]# 03:47:01-062  ThreadID:3 >> ValueChange:1
-[L]# 03:47:01-171  ThreadID:3 >> ValueChange:1
-[L]# 03:47:01-293  ThreadID:3 >> ValueChange:1
-[L]# 03:47:01-404  ThreadID:3 >> ValueChange:1
-[L]# 03:47:01-512  ThreadID:3 >> ValueChange:1
-[L]# 03:47:01-619  ThreadID:3 >> ValueChange:1
-[L]# 03:47:01-733  ThreadID:3 >> ValueChange:1
-[L]# 03:47:01-848  ThreadID:3 >> ValueChange:1
-[L]# 03:47:01-959  ThreadID:3 >> ValueChange:1
-[L]# 03:47:02-071  ThreadID:3 >> ValueChange:1
-[L]# 03:47:02-178  ThreadID:3 >> ValueChange:1
-[L]# 03:47:02-286  ThreadID:3 >> ValueChange:1
-[L]# 03:47:02-396  ThreadID:3 >> ValueChange:1
-[L]# 03:47:02-504  ThreadID:3 >> ValueChange:1
-[L]# 03:47:02-615  ThreadID:3 >> ValueChange:1
-[L]# 03:47:02-720  ThreadID:3 >> ValueChange:1
-[L]# 03:47:02-827  ThreadID:3 >> ValueChange:1
-[L]# 03:47:02-936  ThreadID:3 >> ValueChange:1
-[L]# 03:47:03-044  ThreadID:3 >> ValueChange:1
-[L]# 03:47:03-153  ThreadID:3 >> ValueChange:1
-[L]# 03:47:03-261  ThreadID:3 >> ValueChange:1
-[L]# 03:47:03-367  ThreadID:3 >> ValueChange:1
-[L]# 03:47:03-479  ThreadID:3 >> ValueChange:1
-[L]# 03:47:03-583  ThreadID:3 >> ValueChange:1
-[L]# 03:47:03-695  ThreadID:3 >> ValueChange:1
-[L]# 03:47:03-826  ThreadID:3 >> ValueChange:1
-[L]# 03:47:03-940  ThreadID:3 >> ValueChange:1
-[L]# 03:47:04-087  ThreadID:3 >> ValueChange:1
-[L]# 03:47:04-201  ThreadID:3 >> ValueChange:1
-[L]# 03:47:04-311  ThreadID:3 >> ValueChange:1
-[L]# 03:47:04-417  ThreadID:3 >> ValueChange:1
-[L]# 03:47:04-524  ThreadID:3 >> ValueChange:1
-[L]# 03:47:04-644  ThreadID:3 >> ValueChange:1
-[L]# 03:47:04-753  ThreadID:3 >> ValueChange:1
-[L]# 03:47:04-863  ThreadID:3 >> ValueChange:1
-[L]# 03:47:04-981  ThreadID:3 >> ValueChange:1
-[L]# 03:47:05-104  ThreadID:3 >> ValueChange:1
-[L]# 03:47:05-213  ThreadID:3 >> ValueChange:1
-[L]# 03:47:05-319  ThreadID:3 >> ValueChange:1
-[L]# 03:47:05-429  ThreadID:3 >> ValueChange:1
-[L]# 03:47:05-534  ThreadID:3 >> ValueChange:1
-[L]# 03:47:05-643  ThreadID:3 >> ValueChange:1
-[L]# 03:47:05-752  ThreadID:3 >> ValueChange:1
-[L]# 03:47:05-859  ThreadID:3 >> ValueChange:1
-[L]# 03:47:05-967  ThreadID:3 >> ValueChange:1
-[L]# 03:47:06-082  ThreadID:3 >> ValueChange:1
-[L]# 03:47:06-200  ThreadID:3 >> ValueChange:1
-[L]# 03:47:06-309  ThreadID:3 >> ValueChange:1
-[L]# 03:47:06-436  ThreadID:3 >> ValueChange:1
-[L]# 03:47:06-585  ThreadID:3 >> ValueChange:1
-[L]# 03:47:06-695  ThreadID:3 >> ValueChange:1
-[L]# 03:47:06-817  ThreadID:3 >> ValueChange:1
-[L]# 03:47:06-954  ThreadID:3 >> ValueChange:1
-[L]# 03:47:07-067  ThreadID:3 >> ValueChange:1
-[L]# 03:47:07-182  ThreadID:3 >> ValueChange:1
-[L]# 03:47:07-289  ThreadID:3 >> ValueChange:1
-[L]# 03:47:07-400  ThreadID:3 >> ValueChange:1
-[L]# 03:47:07-598  ThreadID:3 >> ValueChange:1
-[L]# 03:47:07-711  ThreadID:3 >> ValueChange:1
-[L]# 03:47:07-820  ThreadID:3 >> ValueChange:1
-[L]# 03:47:07-933  ThreadID:3 >> ValueChange:1
-[L]# 03:47:08-055  ThreadID:3 >> ValueChange:1
-[L]# 03:47:08-163  ThreadID:3 >> ValueChange:1
-[L]# 03:47:08-270  ThreadID:3 >> ValueChange:1
-[L]# 03:47:08-380  ThreadID:3 >> ValueChange:1
-[L]# 03:47:08-504  ThreadID:3 >> ValueChange:1
-[L]# 03:47:08-610  ThreadID:3 >> ValueChange:1
-[L]# 03:47:08-719  ThreadID:3 >> ValueChange:1
-[L]# 03:47:08-830  ThreadID:3 >> ValueChange:1
-[L]# 03:47:08-933  ThreadID:3 >> ValueChange:1
-[L]# 03:47:09-075  ThreadID:3 >> ValueChange:1
-[L]# 03:47:09-218  ThreadID:3 >> ValueChange:1
-[L]# 03:47:09-319  ThreadID:3 >> ValueChange:1
-[L]# 03:47:09-431  ThreadID:3 >> ValueChange:1
-[L]# 03:47:09-540  ThreadID:3 >> ValueChange:1
-[L]# 03:47:09-645  ThreadID:3 >> ValueChange:1
-[L]# 03:47:09-755  ThreadID:3 >> ValueChange:1
-[L]# 03:47:09-877  ThreadID:3 >> ValueChange:1
-[L]# 03:47:09-985  ThreadID:3 >> ValueChange:1
-[L]# 03:47:10-091  ThreadID:3 >> ValueChange:1
-[L]# 03:47:10-199  ThreadID:3 >> ValueChange:1
+[L]# 02:12:10-456  ThreadID:5 >> New Client Connect:True
+[L]# 02:12:53-203  ThreadID:5 >> Receive Msg:C2SLogin
+[L]# 02:12:53-311  ThreadID:3 >> 处理登录消息,用户名lululu
+[L]# 02:12:53-418  ThreadID:3 >> MoveCross:0,0
+[L]# 02:12:53-430  ThreadID:3 >> OpCombine:1
+[L]# 02:12:58-290  ThreadID:5 >> New Client Connect:True
+[L]# 02:12:59-630  ThreadID:5 >> Client DisConnected
+[L]# 02:12:59-636  ThreadID:5 >> Client DisConnected
+[L]# 02:13:01-649  ThreadID:5 >> New Client Connect:True
+[L]# 02:13:04-232  ThreadID:5 >> Receive Msg:C2SLogin
+[L]# 02:13:04-272  ThreadID:3 >> 处理登录消息,用户名lululu
+[L]# 02:13:04-384  ThreadID:3 >> MoveCross:0,0
+[L]# 02:13:04-386  ThreadID:3 >> 存量视野变化
+[L]# 02:13:04-389  ThreadID:3 >> ValueChange:1
+[L]# 02:13:04-391  ThreadID:3 >> OpCombine:1
+[L]# 02:13:04-391  ThreadID:3 >> OpCombine:1
+[L]# 02:13:06-190  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:06-196  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:06-220  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:06-239  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:06-259  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:06-278  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:06-299  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:06-317  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:06-340  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:06-357  ThreadID:3 >> MoveInside
+[L]# 02:13:06-360  ThreadID:3 >> MoveInside
+[L]# 02:13:06-361  ThreadID:3 >> MoveInside
+[L]# 02:13:06-362  ThreadID:3 >> MoveInside
+[L]# 02:13:06-465  ThreadID:3 >> MoveInside
+[L]# 02:13:06-468  ThreadID:3 >> MoveInside
+[L]# 02:13:06-469  ThreadID:3 >> MoveInside
+[L]# 02:13:06-469  ThreadID:3 >> MoveInside
+[L]# 02:13:06-470  ThreadID:3 >> MoveInside
+[L]# 02:13:07-056  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:07-078  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:07-097  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:07-119  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:07-136  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:07-159  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:07-177  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:07-199  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:07-216  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:07-232  ThreadID:3 >> MoveInside
+[L]# 02:13:07-234  ThreadID:3 >> MoveInside
+[L]# 02:13:07-235  ThreadID:3 >> MoveInside
+[L]# 02:13:07-236  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:07-236  ThreadID:3 >> MoveInside
+[L]# 02:13:07-344  ThreadID:3 >> MoveInside
+[L]# 02:13:07-346  ThreadID:3 >> MoveInside
+[L]# 02:13:07-346  ThreadID:3 >> MoveInside
+[L]# 02:13:07-347  ThreadID:3 >> MoveInside
+[L]# 02:13:07-348  ThreadID:3 >> MoveInside
+[L]# 02:13:07-348  ThreadID:3 >> MoveInside
+[L]# 02:13:07-818  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:07-836  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:07-856  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:07-880  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:07-897  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:07-916  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:07-936  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:07-960  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:07-980  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:07-996  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:08-001  ThreadID:3 >> MoveInside
+[L]# 02:13:08-003  ThreadID:3 >> MoveInside
+[L]# 02:13:08-004  ThreadID:3 >> MoveInside
+[L]# 02:13:08-005  ThreadID:3 >> MoveInside
+[L]# 02:13:08-018  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:08-042  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:08-058  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:08-077  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:08-098  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:08-112  ThreadID:3 >> MoveInside
+[L]# 02:13:08-113  ThreadID:3 >> MoveInside
+[L]# 02:13:08-117  ThreadID:3 >> MoveInside
+[L]# 02:13:08-118  ThreadID:3 >> MoveInside
+[L]# 02:13:08-119  ThreadID:3 >> MoveInside
+[L]# 02:13:08-119  ThreadID:3 >> MoveInside
+[L]# 02:13:08-232  ThreadID:3 >> MoveCross:-1,0
+[L]# 02:13:08-234  ThreadID:3 >> MoveInside
+[L]# 02:13:08-235  ThreadID:3 >> MoveInside
+[L]# 02:13:08-236  ThreadID:3 >> MoveInside
+[L]# 02:13:08-236  ThreadID:3 >> MoveInside
+[L]# 02:13:08-459  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:08-478  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:08-496  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:08-520  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:08-535  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:08-558  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:08-578  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:08-596  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:08-616  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:08-638  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:08-657  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:08-670  ThreadID:3 >> MoveCross:0,0
+[L]# 02:13:08-671  ThreadID:3 >> MoveInside
+[L]# 02:13:08-676  ThreadID:3 >> MoveInside
+[L]# 02:13:08-679  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:08-680  ThreadID:3 >> MoveInside
+[L]# 02:13:08-681  ThreadID:3 >> MoveInside
+[L]# 02:13:08-681  ThreadID:3 >> MoveInside
+[L]# 02:13:08-699  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:08-717  ThreadID:5 >> Receive Msg:C2SEntityMove
+[L]# 02:13:08-795  ThreadID:3 >> MoveInside
+[L]# 02:13:08-801  ThreadID:3 >> MoveInside
+[L]# 02:13:08-802  ThreadID:3 >> MoveInside
+[L]# 02:13:08-802  ThreadID:3 >> MoveInside
+[L]# 02:13:08-802  ThreadID:3 >> MoveInside
+[L]# 02:13:08-803  ThreadID:3 >> MoveInside
+[L]# 02:13:08-905  ThreadID:3 >> MoveInside
+[L]# 02:13:08-913  ThreadID:3 >> MoveInside
+[L]# 02:13:14-005  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:14-016  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:14-038  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:14-059  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:14-085  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:14-101  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:14-119  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:14-141  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:14-177  ThreadID:3 >> MoveInside
+[L]# 02:13:14-182  ThreadID:3 >> MoveInside
+[L]# 02:13:14-182  ThreadID:3 >> MoveInside
+[L]# 02:13:14-183  ThreadID:3 >> MoveInside
+[L]# 02:13:14-298  ThreadID:3 >> MoveInside
+[L]# 02:13:14-299  ThreadID:3 >> MoveInside
+[L]# 02:13:14-304  ThreadID:3 >> MoveInside
+[L]# 02:13:14-305  ThreadID:3 >> MoveInside
+[L]# 02:13:14-903  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:14-918  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:14-939  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:14-958  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:14-976  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:14-998  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:15-019  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:15-041  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:15-056  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:15-064  ThreadID:3 >> MoveInside
+[L]# 02:13:15-066  ThreadID:3 >> MoveInside
+[L]# 02:13:15-069  ThreadID:3 >> MoveInside
+[L]# 02:13:15-079  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:15-101  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:15-173  ThreadID:3 >> MoveInside
+[L]# 02:13:15-174  ThreadID:3 >> MoveInside
+[L]# 02:13:15-176  ThreadID:3 >> MoveInside
+[L]# 02:13:15-177  ThreadID:3 >> MoveInside
+[L]# 02:13:15-181  ThreadID:3 >> MoveInside
+[L]# 02:13:15-181  ThreadID:3 >> MoveInside
+[L]# 02:13:15-282  ThreadID:3 >> MoveInside
+[L]# 02:13:15-284  ThreadID:3 >> MoveInside
+[L]# 02:13:15-401  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:15-420  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:15-441  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:15-456  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:15-480  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:15-498  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:15-522  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:15-539  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:15-561  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:15-611  ThreadID:3 >> MoveInside
+[L]# 02:13:15-615  ThreadID:3 >> MoveInside
+[L]# 02:13:15-616  ThreadID:3 >> MoveInside
+[L]# 02:13:15-617  ThreadID:3 >> MoveInside
+[L]# 02:13:15-617  ThreadID:3 >> MoveInside
+[L]# 02:13:15-618  ThreadID:3 >> MoveInside
+[L]# 02:13:15-720  ThreadID:3 >> MoveInside
+[L]# 02:13:15-726  ThreadID:3 >> MoveInside
+[L]# 02:13:15-727  ThreadID:3 >> MoveInside
+[L]# 02:13:15-858  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:15-880  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:15-896  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:15-919  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:15-941  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:15-963  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:15-979  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:15-998  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:16-017  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:16-037  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:16-051  ThreadID:3 >> MoveInside
+[L]# 02:13:16-052  ThreadID:3 >> MoveInside
+[L]# 02:13:16-055  ThreadID:3 >> MoveInside
+[L]# 02:13:16-055  ThreadID:3 >> MoveInside
+[L]# 02:13:16-056  ThreadID:3 >> MoveInside
+[L]# 02:13:16-059  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:16-079  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:16-101  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:16-122  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:16-160  ThreadID:3 >> MoveInside
+[L]# 02:13:16-164  ThreadID:3 >> MoveInside
+[L]# 02:13:16-165  ThreadID:3 >> MoveInside
+[L]# 02:13:16-166  ThreadID:3 >> MoveInside
+[L]# 02:13:16-167  ThreadID:3 >> MoveInside
+[L]# 02:13:16-272  ThreadID:3 >> MoveInside
+[L]# 02:13:16-276  ThreadID:3 >> MoveInside
+[L]# 02:13:16-277  ThreadID:3 >> MoveInside
+[L]# 02:13:16-277  ThreadID:3 >> MoveInside
+[L]# 02:13:16-705  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:16-716  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:16-740  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:16-758  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:16-777  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:16-806  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:16-818  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:16-823  ThreadID:3 >> MoveInside
+[L]# 02:13:16-843  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:16-861  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:16-879  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:16-931  ThreadID:3 >> MoveInside
+[L]# 02:13:16-936  ThreadID:3 >> MoveInside
+[L]# 02:13:16-937  ThreadID:3 >> MoveInside
+[L]# 02:13:16-938  ThreadID:3 >> MoveInside
+[L]# 02:13:16-938  ThreadID:3 >> MoveInside
+[L]# 02:13:16-939  ThreadID:3 >> MoveInside
+[L]# 02:13:17-043  ThreadID:3 >> MoveInside
+[L]# 02:13:17-046  ThreadID:3 >> MoveInside
+[L]# 02:13:17-047  ThreadID:3 >> MoveInside
+[L]# 02:13:18-169  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:18-176  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:18-199  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:18-216  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:18-249  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:18-267  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:18-278  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:18-301  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:18-318  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:18-366  ThreadID:3 >> MoveInside
+[L]# 02:13:18-372  ThreadID:3 >> MoveInside
+[L]# 02:13:18-374  ThreadID:3 >> MoveInside
+[L]# 02:13:18-375  ThreadID:3 >> MoveInside
+[L]# 02:13:18-376  ThreadID:3 >> MoveInside
+[L]# 02:13:18-478  ThreadID:3 >> MoveInside
+[L]# 02:13:18-481  ThreadID:3 >> MoveInside
+[L]# 02:13:18-482  ThreadID:3 >> MoveInside
+[L]# 02:13:18-482  ThreadID:3 >> MoveInside
+[L]# 02:13:19-119  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:19-141  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:19-165  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:19-176  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:19-202  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:19-216  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:19-236  ThreadID:3 >> MoveInside
+[L]# 02:13:19-240  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:19-257  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:19-345  ThreadID:3 >> MoveInside
+[L]# 02:13:19-345  ThreadID:3 >> MoveInside
+[L]# 02:13:19-353  ThreadID:3 >> MoveInside
+[L]# 02:13:19-354  ThreadID:3 >> MoveInside
+[L]# 02:13:19-355  ThreadID:3 >> MoveInside
+[L]# 02:13:19-470  ThreadID:3 >> MoveInside
+[L]# 02:13:19-478  ThreadID:3 >> MoveInside
+[L]# 02:13:20-261  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:20-276  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:20-298  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:20-321  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:20-337  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:20-359  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:20-381  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:20-398  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:20-472  ThreadID:3 >> MoveInside
+[L]# 02:13:20-478  ThreadID:3 >> MoveInside
+[L]# 02:13:20-478  ThreadID:3 >> MoveInside
+[L]# 02:13:20-479  ThreadID:3 >> MoveInside
+[L]# 02:13:20-479  ThreadID:3 >> MoveInside
+[L]# 02:13:20-482  ThreadID:3 >> MoveInside
+[L]# 02:13:20-600  ThreadID:3 >> MoveInside
+[L]# 02:13:20-607  ThreadID:3 >> MoveInside
+[L]# 02:13:21-986  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:22-000  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:22-018  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:22-038  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:22-065  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:22-076  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:22-106  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:22-116  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:22-137  ThreadID:3 >> MoveInside
+[L]# 02:13:22-139  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:22-139  ThreadID:3 >> MoveInside
+[L]# 02:13:22-141  ThreadID:3 >> MoveInside
+[L]# 02:13:22-166  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:22-177  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:22-203  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:22-247  ThreadID:3 >> MoveInside
+[L]# 02:13:22-250  ThreadID:3 >> MoveInside
+[L]# 02:13:22-251  ThreadID:3 >> MoveInside
+[L]# 02:13:22-252  ThreadID:3 >> MoveInside
+[L]# 02:13:22-252  ThreadID:3 >> MoveInside
+[L]# 02:13:22-253  ThreadID:3 >> MoveInside
+[L]# 02:13:22-359  ThreadID:3 >> MoveInside
+[L]# 02:13:22-365  ThreadID:3 >> MoveInside
+[L]# 02:13:22-367  ThreadID:3 >> MoveInside
+[L]# 02:13:22-920  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:22-942  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:22-957  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:22-981  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:22-997  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:23-024  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:23-040  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:23-061  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:23-076  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:23-096  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:23-130  ThreadID:3 >> MoveInside
+[L]# 02:13:23-134  ThreadID:3 >> MoveInside
+[L]# 02:13:23-136  ThreadID:3 >> MoveInside
+[L]# 02:13:23-136  ThreadID:3 >> MoveInside
+[L]# 02:13:23-137  ThreadID:3 >> MoveInside
+[L]# 02:13:23-239  ThreadID:3 >> MoveInside
+[L]# 02:13:23-247  ThreadID:3 >> MoveInside
+[L]# 02:13:23-249  ThreadID:3 >> MoveInside
+[L]# 02:13:23-251  ThreadID:3 >> MoveInside
+[L]# 02:13:23-251  ThreadID:3 >> MoveInside
+[L]# 02:13:25-308  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:25-321  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:25-340  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:25-363  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:25-392  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:25-401  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:25-420  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:25-437  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:25-459  ThreadID:3 >> MoveInside
+[L]# 02:13:25-464  ThreadID:3 >> MoveInside
+[L]# 02:13:25-466  ThreadID:3 >> MoveInside
+[L]# 02:13:25-471  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:25-485  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:25-497  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:25-582  ThreadID:3 >> MoveInside
+[L]# 02:13:25-588  ThreadID:3 >> MoveInside
+[L]# 02:13:25-591  ThreadID:3 >> MoveInside
+[L]# 02:13:25-591  ThreadID:3 >> MoveInside
+[L]# 02:13:25-596  ThreadID:3 >> MoveInside
+[L]# 02:13:25-704  ThreadID:3 >> MoveInside
+[L]# 02:13:25-706  ThreadID:3 >> MoveInside
+[L]# 02:13:25-707  ThreadID:3 >> MoveInside
+[L]# 02:13:25-756  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:25-780  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:25-806  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:25-819  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:25-836  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:25-862  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:25-877  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:25-903  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:25-920  ThreadID:3 >> MoveInside
+[L]# 02:13:25-926  ThreadID:3 >> MoveInside
+[L]# 02:13:25-926  ThreadID:3 >> MoveInside
+[L]# 02:13:25-930  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:25-937  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:25-960  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:26-042  ThreadID:3 >> MoveInside
+[L]# 02:13:26-044  ThreadID:3 >> MoveInside
+[L]# 02:13:26-047  ThreadID:3 >> MoveInside
+[L]# 02:13:26-047  ThreadID:3 >> MoveInside
+[L]# 02:13:26-048  ThreadID:3 >> MoveInside
+[L]# 02:13:26-153  ThreadID:3 >> MoveInside
+[L]# 02:13:26-158  ThreadID:3 >> MoveInside
+[L]# 02:13:26-158  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:26-159  ThreadID:3 >> MoveInside
+[L]# 02:13:26-182  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:26-199  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:26-227  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:26-236  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:26-260  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:26-261  ThreadID:3 >> MoveInside
+[L]# 02:13:26-280  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:26-296  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:26-320  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:26-342  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:26-357  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:26-369  ThreadID:3 >> MoveInside
+[L]# 02:13:26-376  ThreadID:3 >> MoveInside
+[L]# 02:13:26-377  ThreadID:3 >> MoveInside
+[L]# 02:13:26-377  ThreadID:3 >> MoveInside
+[L]# 02:13:26-378  ThreadID:3 >> MoveInside
+[L]# 02:13:26-382  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:26-492  ThreadID:3 >> MoveInside
+[L]# 02:13:26-495  ThreadID:3 >> MoveInside
+[L]# 02:13:26-500  ThreadID:3 >> MoveInside
+[L]# 02:13:26-503  ThreadID:3 >> MoveInside
+[L]# 02:13:26-505  ThreadID:3 >> MoveInside
+[L]# 02:13:26-618  ThreadID:3 >> MoveInside
+[L]# 02:13:29-138  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:29-169  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:29-183  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:29-198  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:29-223  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:29-247  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:29-262  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:29-282  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:29-307  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:29-330  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:29-342  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:29-348  ThreadID:3 >> MoveInside
+[L]# 02:13:29-355  ThreadID:3 >> MoveInside
+[L]# 02:13:29-358  ThreadID:3 >> MoveInside
+[L]# 02:13:29-359  ThreadID:3 >> MoveInside
+[L]# 02:13:29-361  ThreadID:3 >> MoveInside
+[L]# 02:13:29-469  ThreadID:3 >> MoveCross:1,0
+[L]# 02:13:29-472  ThreadID:3 >> MoveInside
+[L]# 02:13:29-474  ThreadID:3 >> MoveInside
+[L]# 02:13:29-474  ThreadID:3 >> MoveInside
+[L]# 02:13:29-477  ThreadID:3 >> MoveInside
+[L]# 02:13:29-481  ThreadID:3 >> MoveInside
+[L]# 02:13:29-484  ThreadID:4 >> Receive Msg:C2SEntityMove
+[L]# 02:13:29-488  ThreadID:6 >> Receive Msg:C2SEntityMove
+[L]# 02:13:29-489  ThreadID:6 >> Receive Msg:C2SEntityMove
+[L]# 02:13:29-511  ThreadID:6 >> Receive Msg:C2SEntityMove
+[L]# 02:13:29-558  ThreadID:6 >> Receive Msg:C2SEntityMove
+[L]# 02:13:29-559  ThreadID:6 >> Receive Msg:C2SEntityMove
+[L]# 02:13:29-561  ThreadID:6 >> Receive Msg:C2SEntityMove
+[L]# 02:13:29-584  ThreadID:6 >> Receive Msg:C2SEntityMove
+[L]# 02:13:29-603  ThreadID:6 >> Receive Msg:C2SEntityMove
+[L]# 02:13:29-621  ThreadID:6 >> Receive Msg:C2SEntityMove
+[L]# 02:13:29-637  ThreadID:6 >> Receive Msg:C2SEntityMove
+[L]# 02:13:29-658  ThreadID:6 >> Receive Msg:C2SEntityMove
+[L]# 02:13:29-678  ThreadID:6 >> Receive Msg:C2SEntityMove
+[L]# 02:13:29-704  ThreadID:3 >> MoveInside
+[L]# 02:13:29-707  ThreadID:3 >> MoveInside
+[L]# 02:13:29-708  ThreadID:3 >> MoveInside
+[L]# 02:13:29-709  ThreadID:3 >> MoveInside
+[L]# 02:13:29-709  ThreadID:3 >> MoveInside
+[L]# 02:13:29-710  ThreadID:3 >> MoveInside
+[L]# 02:13:29-710  ThreadID:3 >> MoveInside
+[L]# 02:13:29-711  ThreadID:3 >> MoveInside
+[L]# 02:13:29-815  ThreadID:3 >> MoveInside
+[L]# 02:13:29-821  ThreadID:3 >> MoveInside
+[L]# 02:13:29-822  ThreadID:3 >> MoveInside
+[L]# 02:13:29-823  ThreadID:3 >> MoveInside
+[L]# 02:13:29-823  ThreadID:3 >> MoveInside

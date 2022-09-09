@@ -99,6 +99,8 @@ namespace AOIServer
         private void InitHandler()
         {
             new LoginHandler();
+            new EntityMoveHandler();
+            new EntityExitHandler();
         }
     }
 }

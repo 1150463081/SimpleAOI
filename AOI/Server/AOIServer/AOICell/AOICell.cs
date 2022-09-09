@@ -12,7 +12,17 @@ namespace AOICell
         public int ZIndex { get; private set; }
         public bool IsCalcuBoundary { get; private set; } = false;
         private AOIMgr mgr;
+
+
         private AOICell[] AOIGround = null;
+        //穿越边界时视野内添加的宫格
+        private Dictionary<ECrossDirType, AOICell[]> CrossAddCell = new Dictionary<ECrossDirType, AOICell[]>();
+        //穿越边界时视野内移除的宫格
+        private Dictionary<ECrossDirType, AOICell[]> CrossRemoveCell = new Dictionary<ECrossDirType, AOICell[]>();
+        //穿越边界时视野内未变的宫格
+        private Dictionary<ECrossDirType, AOICell[]> CrossNoChangeCell = new Dictionary<ECrossDirType, AOICell[]>();
+
+
         public CellUpdateData CellUpdateData { get; private set; }
         public HashSet<AOIEntity> HoldEntity { get; private set; }
         //新进入的实体，待实体存量增删完成后再加入HoldEntity
@@ -36,7 +46,7 @@ namespace AOICell
             }   
             if (entity.MoveType == EMoveType.TransferEnter)
             {
-                entity.SetAroundCell(AOIGround);
+                entity.AddAroundCellView(AOIGround);
                 for (int i = 0; i < AOIGround.Length; i++)
                 {
                     AOIGround[i].AddCellOperate(ECellOperate.EntityEnter, entity);
@@ -44,7 +54,7 @@ namespace AOICell
             }
             else if (entity.MoveType == EMoveType.MoveCross)
             {
-
+                CrossMove(entity.ECrossDirType, entity);
             }
             else
             {
@@ -62,6 +72,31 @@ namespace AOICell
                 AOIGround[i].AddCellOperate(ECellOperate.EntityExit, entity);
             }
             HoldEntity.Remove(entity);
+        }
+
+        void CrossMove(ECrossDirType crossDir,AOIEntity entity)
+        {
+            if (crossDir == ECrossDirType.None)
+            {
+                return;
+            }
+            var removeArr = CrossRemoveCell[crossDir];
+            var addArr = CrossAddCell[crossDir];
+            var noChangeArr = CrossNoChangeCell[crossDir];
+            for (int i = 0; i < removeArr.Length; i++)
+            {
+                entity.RemoveCellView(removeArr[i]);
+                removeArr[i].AddCellOperate(ECellOperate.EntityExit, entity);
+            }
+            for (int i = 0; i < addArr.Length; i++)
+            {
+                entity.AddCellView(addArr[i]);
+                addArr[i].AddCellOperate(ECellOperate.EntityEnter, entity);
+            }
+            for (int i = 0; i < noChangeArr.Length; i++)
+            {
+                noChangeArr[i].AddCellOperate(ECellOperate.EntityMove, entity);
+            }
         }
         public void AddCellOperate(ECellOperate cellOperate, AOIEntity entity)
         {
@@ -101,6 +136,26 @@ namespace AOICell
                         AOIGround[index++] = mgr.GetOrCreateCell(i, j);
                     }
                 }
+            }
+            //up
+            {
+                CrossAddCell[ECrossDirType.Up] = new AOICell[3];
+                CrossAddCell[ECrossDirType.Up][0] = mgr.CellDict[$"{XIndex - 1},{ZIndex - 2}"];
+                CrossAddCell[ECrossDirType.Up][1] = mgr.CellDict[$"{XIndex},{ZIndex - 2}"];
+                CrossAddCell[ECrossDirType.Up][2] = mgr.CellDict[$"{XIndex + 1},{ZIndex - 2}"];
+
+                CrossRemoveCell[ECrossDirType.Up] = new AOICell[3];
+                CrossRemoveCell[ECrossDirType.Up][3] = mgr.CellDict[$"{XIndex - 1},{ZIndex + 1}"];
+                CrossRemoveCell[ECrossDirType.Up][4] = mgr.CellDict[$"{XIndex},{ZIndex + 1}"];
+                CrossRemoveCell[ECrossDirType.Up][5] = mgr.CellDict[$"{XIndex + 1},{ZIndex + 1}"];
+
+                CrossNoChangeCell[ECrossDirType.Up] = new AOICell[6];
+                CrossNoChangeCell[ECrossDirType.Up][6] = mgr.CellDict[$"{XIndex - 1},{ZIndex}"];
+                CrossNoChangeCell[ECrossDirType.Up][7] = mgr.CellDict[$"{XIndex},{ZIndex}"];
+                CrossNoChangeCell[ECrossDirType.Up][8] = mgr.CellDict[$"{XIndex + 1},{ZIndex}"];
+                CrossNoChangeCell[ECrossDirType.Up][9] = mgr.CellDict[$"{XIndex - 1},{ZIndex - 1}"];
+                CrossNoChangeCell[ECrossDirType.Up][10] = mgr.CellDict[$"{XIndex },{ZIndex - 1}"];
+                CrossNoChangeCell[ECrossDirType.Up][11] = mgr.CellDict[$"{XIndex + 1},{ZIndex - 1}"];
             }
             IsCalcuBoundary = true;
         }
