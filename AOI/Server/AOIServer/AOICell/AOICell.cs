@@ -13,6 +13,17 @@ namespace AOICell
         public bool IsCalcuBoundary { get; private set; } = false;
         private AOIMgr mgr;
 
+        #region GroundCell
+        public AOICell Up => mgr.CellDict[$"{XIndex},{ZIndex + 1}"];
+        public AOICell Down => mgr.CellDict[$"{XIndex},{ZIndex - 1}"];
+        public AOICell Left => mgr.CellDict[$"{XIndex - 1},{ZIndex}"];
+        public AOICell Right => mgr.CellDict[$"{XIndex + 1},{ZIndex}"];
+        public AOICell LeftUp => mgr.CellDict[$"{XIndex - 1},{ZIndex + 1}"];
+        public AOICell RightUp => mgr.CellDict[$"{XIndex + 1},{ZIndex + 1}"];
+        public AOICell LeftDown => mgr.CellDict[$"{XIndex - 1},{ZIndex - 1}"];
+        public AOICell RightDown => mgr.CellDict[$"{XIndex + 1},{ZIndex - 1}"];
+        #endregion
+
 
         private AOICell[] AOIGround = null;
         //穿越边界时视野内添加的宫格
@@ -43,7 +54,7 @@ namespace AOICell
             {
                 this.Error($"EnterEntity Add Err:{entity.EntityId}");
                 return;
-            }   
+            }
             if (entity.MoveType == EMoveType.TransferEnter)
             {
                 entity.AddAroundCellView(AOIGround);
@@ -74,7 +85,7 @@ namespace AOICell
             HoldEntity.Remove(entity);
         }
 
-        void CrossMove(ECrossDirType crossDir,AOIEntity entity)
+        void CrossMove(ECrossDirType crossDir, AOIEntity entity)
         {
             if (crossDir == ECrossDirType.None)
             {
@@ -139,23 +150,171 @@ namespace AOICell
             }
             //up
             {
-                CrossAddCell[ECrossDirType.Up] = new AOICell[3];
-                CrossAddCell[ECrossDirType.Up][0] = mgr.CellDict[$"{XIndex - 1},{ZIndex - 2}"];
-                CrossAddCell[ECrossDirType.Up][1] = mgr.CellDict[$"{XIndex},{ZIndex - 2}"];
-                CrossAddCell[ECrossDirType.Up][2] = mgr.CellDict[$"{XIndex + 1},{ZIndex - 2}"];
-
                 CrossRemoveCell[ECrossDirType.Up] = new AOICell[3];
-                CrossRemoveCell[ECrossDirType.Up][3] = mgr.CellDict[$"{XIndex - 1},{ZIndex + 1}"];
-                CrossRemoveCell[ECrossDirType.Up][4] = mgr.CellDict[$"{XIndex},{ZIndex + 1}"];
-                CrossRemoveCell[ECrossDirType.Up][5] = mgr.CellDict[$"{XIndex + 1},{ZIndex + 1}"];
+                CrossRemoveCell[ECrossDirType.Up][0] = Down.LeftDown;
+                CrossRemoveCell[ECrossDirType.Up][1] = Down.Down;
+                CrossRemoveCell[ECrossDirType.Up][2] = Down.RightDown;
+
+                CrossAddCell[ECrossDirType.Up] = new AOICell[3];
+                CrossAddCell[ECrossDirType.Up][0] = LeftUp;
+                CrossAddCell[ECrossDirType.Up][1] = Up;
+                CrossAddCell[ECrossDirType.Up][2] = RightUp;
 
                 CrossNoChangeCell[ECrossDirType.Up] = new AOICell[6];
-                CrossNoChangeCell[ECrossDirType.Up][6] = mgr.CellDict[$"{XIndex - 1},{ZIndex}"];
-                CrossNoChangeCell[ECrossDirType.Up][7] = mgr.CellDict[$"{XIndex},{ZIndex}"];
-                CrossNoChangeCell[ECrossDirType.Up][8] = mgr.CellDict[$"{XIndex + 1},{ZIndex}"];
-                CrossNoChangeCell[ECrossDirType.Up][9] = mgr.CellDict[$"{XIndex - 1},{ZIndex - 1}"];
-                CrossNoChangeCell[ECrossDirType.Up][10] = mgr.CellDict[$"{XIndex },{ZIndex - 1}"];
-                CrossNoChangeCell[ECrossDirType.Up][11] = mgr.CellDict[$"{XIndex + 1},{ZIndex - 1}"];
+                CrossNoChangeCell[ECrossDirType.Up][0] = Left;
+                CrossNoChangeCell[ECrossDirType.Up][1] = this;
+                CrossNoChangeCell[ECrossDirType.Up][2] = Right;
+                CrossNoChangeCell[ECrossDirType.Up][3] = LeftDown;
+                CrossNoChangeCell[ECrossDirType.Up][4] = Down;
+                CrossNoChangeCell[ECrossDirType.Up][5] = RightDown;
+            }
+            //Down
+            {
+                CrossRemoveCell[ECrossDirType.Down] = new AOICell[3];
+                CrossRemoveCell[ECrossDirType.Down][0] = Up.LeftUp;
+                CrossRemoveCell[ECrossDirType.Down][1] = Up.Up;
+                CrossRemoveCell[ECrossDirType.Down][2] = Up.RightUp;
+
+                CrossAddCell[ECrossDirType.Down] = new AOICell[3];
+                CrossAddCell[ECrossDirType.Down][0] = LeftDown;
+                CrossAddCell[ECrossDirType.Down][1] = Down;
+                CrossAddCell[ECrossDirType.Down][2] = RightDown;
+
+                CrossNoChangeCell[ECrossDirType.Down] = new AOICell[6];
+                CrossNoChangeCell[ECrossDirType.Down][0] = Left;
+                CrossNoChangeCell[ECrossDirType.Down][1] = this;
+                CrossNoChangeCell[ECrossDirType.Down][2] = Right;
+                CrossNoChangeCell[ECrossDirType.Down][3] = LeftUp;
+                CrossNoChangeCell[ECrossDirType.Down][4] = Up;
+                CrossNoChangeCell[ECrossDirType.Down][5] = RightUp;
+            }
+            //Left
+            {
+                CrossRemoveCell[ECrossDirType.Left] = new AOICell[3];
+                CrossRemoveCell[ECrossDirType.Left][0] = Right.RightUp;
+                CrossRemoveCell[ECrossDirType.Left][1] = Right.Right;
+                CrossRemoveCell[ECrossDirType.Left][2] = Right.RightDown;
+
+                CrossAddCell[ECrossDirType.Left] = new AOICell[3];
+                CrossAddCell[ECrossDirType.Left][0] = LeftUp;
+                CrossAddCell[ECrossDirType.Left][1] = Left;
+                CrossAddCell[ECrossDirType.Left][2] = LeftDown;
+
+                CrossNoChangeCell[ECrossDirType.Left] = new AOICell[6];
+                CrossNoChangeCell[ECrossDirType.Left][0] = Up;
+                CrossNoChangeCell[ECrossDirType.Left][1] = this;
+                CrossNoChangeCell[ECrossDirType.Left][2] = Down;
+                CrossNoChangeCell[ECrossDirType.Left][3] = RightUp;
+                CrossNoChangeCell[ECrossDirType.Left][4] = Right;
+                CrossNoChangeCell[ECrossDirType.Left][5] = RightDown;
+            }
+            //Right
+            {
+                CrossRemoveCell[ECrossDirType.Right] = new AOICell[3];
+                CrossRemoveCell[ECrossDirType.Right][0] = Left.LeftUp;
+                CrossRemoveCell[ECrossDirType.Right][1] = Left.Left;
+                CrossRemoveCell[ECrossDirType.Right][2] = Left.LeftDown;
+
+                CrossAddCell[ECrossDirType.Right] = new AOICell[3];
+                CrossAddCell[ECrossDirType.Right][0] = RightUp;
+                CrossAddCell[ECrossDirType.Right][1] = Right;
+                CrossAddCell[ECrossDirType.Right][2] = RightDown;
+
+                CrossNoChangeCell[ECrossDirType.Right] = new AOICell[6];
+                CrossNoChangeCell[ECrossDirType.Right][0] = Up;
+                CrossNoChangeCell[ECrossDirType.Right][1] = this;
+                CrossNoChangeCell[ECrossDirType.Right][2] = Down;
+                CrossNoChangeCell[ECrossDirType.Right][3] = RightUp;
+                CrossNoChangeCell[ECrossDirType.Right][4] = Right;
+                CrossNoChangeCell[ECrossDirType.Right][5] = RightDown;
+            }
+            //LeftUp
+            {
+                CrossRemoveCell[ECrossDirType.LeftUp] = new AOICell[5];
+                CrossRemoveCell[ECrossDirType.LeftUp][0] = Right.Right;
+                CrossRemoveCell[ECrossDirType.LeftUp][1] = Right.RightDown;
+                CrossRemoveCell[ECrossDirType.LeftUp][2] = RightDown.RightDown;
+                CrossRemoveCell[ECrossDirType.LeftUp][3] = Down.RightDown;
+                CrossRemoveCell[ECrossDirType.LeftUp][4] = Down.Down;
+
+                CrossAddCell[ECrossDirType.LeftUp] = new AOICell[5];
+                CrossAddCell[ECrossDirType.LeftUp][0] = LeftUp;
+                CrossAddCell[ECrossDirType.LeftUp][1] = Up;
+                CrossAddCell[ECrossDirType.LeftUp][2] = RightUp;
+                CrossAddCell[ECrossDirType.LeftUp][3] = Left;
+                CrossAddCell[ECrossDirType.LeftUp][4] = LeftDown;
+
+                CrossNoChangeCell[ECrossDirType.LeftUp] = new AOICell[4];
+                CrossNoChangeCell[ECrossDirType.LeftUp][0] = this;
+                CrossNoChangeCell[ECrossDirType.LeftUp][1] = Right;
+                CrossNoChangeCell[ECrossDirType.LeftUp][2] = Down;
+                CrossNoChangeCell[ECrossDirType.LeftUp][3] = RightDown;
+            }
+            //RightUp
+            {
+                CrossRemoveCell[ECrossDirType.RightUp] = new AOICell[5];
+                CrossRemoveCell[ECrossDirType.RightUp][0] = Left.Left;
+                CrossRemoveCell[ECrossDirType.RightUp][1] = Left.LeftDown;
+                CrossRemoveCell[ECrossDirType.RightUp][2] = LeftDown.LeftDown;
+                CrossRemoveCell[ECrossDirType.RightUp][3] = Down.LeftDown;
+                CrossRemoveCell[ECrossDirType.RightUp][4] = Down.Down;
+
+                CrossAddCell[ECrossDirType.RightUp] = new AOICell[5];
+                CrossAddCell[ECrossDirType.RightUp][0] = LeftUp;
+                CrossAddCell[ECrossDirType.RightUp][1] = Up;
+                CrossAddCell[ECrossDirType.RightUp][2] = RightUp;
+                CrossAddCell[ECrossDirType.RightUp][3] = Right;
+                CrossAddCell[ECrossDirType.RightUp][4] = RightDown;
+
+                CrossNoChangeCell[ECrossDirType.RightUp] = new AOICell[4];
+                CrossNoChangeCell[ECrossDirType.RightUp][0] = Left;
+                CrossNoChangeCell[ECrossDirType.RightUp][1] = this;
+                CrossNoChangeCell[ECrossDirType.RightUp][2] = LeftDown;
+                CrossNoChangeCell[ECrossDirType.RightUp][3] = Down;
+            }
+            //leftDown
+            {
+                CrossRemoveCell[ECrossDirType.LeftDown] = new AOICell[5];
+                CrossRemoveCell[ECrossDirType.LeftDown][0] = Up.Up;
+                CrossRemoveCell[ECrossDirType.LeftDown][1] = Up.RightUp;
+                CrossRemoveCell[ECrossDirType.LeftDown][2] = RightUp.RightUp;
+                CrossRemoveCell[ECrossDirType.LeftDown][3] = Right.RightUp;
+                CrossRemoveCell[ECrossDirType.LeftDown][4] = Right.Right;
+
+                CrossAddCell[ECrossDirType.LeftDown] = new AOICell[5];
+                CrossAddCell[ECrossDirType.LeftDown][0] = LeftUp;
+                CrossAddCell[ECrossDirType.LeftDown][1] = Left;
+                CrossAddCell[ECrossDirType.LeftDown][2] = LeftDown;
+                CrossAddCell[ECrossDirType.LeftDown][3] = Down;
+                CrossAddCell[ECrossDirType.LeftDown][4] = RightDown;
+
+                CrossNoChangeCell[ECrossDirType.LeftDown] = new AOICell[4];
+                CrossNoChangeCell[ECrossDirType.LeftDown][0] = Up;
+                CrossNoChangeCell[ECrossDirType.LeftDown][1] = RightUp;
+                CrossNoChangeCell[ECrossDirType.LeftDown][2] = this;
+                CrossNoChangeCell[ECrossDirType.LeftDown][3] = Right;
+            }
+            //RightDown
+            {
+                CrossRemoveCell[ECrossDirType.RightDown] = new AOICell[5];
+                CrossRemoveCell[ECrossDirType.RightDown][0] = LeftUp.LeftUp;
+                CrossRemoveCell[ECrossDirType.RightDown][1] = LeftUp.Up;
+                CrossRemoveCell[ECrossDirType.RightDown][2] = Up.Up;
+                CrossRemoveCell[ECrossDirType.RightDown][3] = Left.LeftUp;
+                CrossRemoveCell[ECrossDirType.RightDown][4] = Left.Left;
+
+                CrossAddCell[ECrossDirType.RightDown] = new AOICell[5];
+                CrossAddCell[ECrossDirType.RightDown][0] = RightUp;
+                CrossAddCell[ECrossDirType.RightDown][1] = Right;
+                CrossAddCell[ECrossDirType.RightDown][2] = RightDown;
+                CrossAddCell[ECrossDirType.RightDown][3] = Down;
+                CrossAddCell[ECrossDirType.RightDown][4] = LeftDown;
+
+                CrossNoChangeCell[ECrossDirType.RightDown] = new AOICell[4];
+                CrossNoChangeCell[ECrossDirType.RightDown][0] = LeftUp;
+                CrossNoChangeCell[ECrossDirType.RightDown][1] = Up;
+                CrossNoChangeCell[ECrossDirType.RightDown][2] = Left;
+                CrossNoChangeCell[ECrossDirType.RightDown][3] = this;
             }
             IsCalcuBoundary = true;
         }
