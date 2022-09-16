@@ -16,13 +16,20 @@ namespace AOIServer
                 while (true)
                 {
                     ServerRoot.Instance.Tick();
-                    Thread.Sleep(100);
+                    Thread.Sleep(10);
                 }
             });
 
             while (true)
             {
-                Console.ReadLine();
+                var str= Console.ReadLine();
+                if (int.TryParse(str,out var num))
+                {
+                    for (int i = 0; i < num; i++)
+                    {
+                        ServerRoot.Instance.CreateRobotRole();
+                    }
+                }
             }
 
         }

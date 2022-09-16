@@ -16,7 +16,7 @@ namespace AOIClient
 
         public int MyRoleId { get; private set; }
         public RoleEntity MainPlayer { get; private set; }
-        private Pkg_S2CLogin mLoginPkg;
+        public Pkg_S2CLogin LoginPkg { get; private set; }
 
         protected override void OnInit()
         {
@@ -48,6 +48,9 @@ namespace AOIClient
             if (roleId == MyRoleId)
             {
                 MainPlayer = role;
+                //设置主摄像机
+                var camera = Camera.main;
+                camera.transform.SetParent(MainPlayer.gameObject.transform);
             }
         }
         public void RemoveRole(int roleId)
@@ -68,7 +71,7 @@ namespace AOIClient
         }
         public void SetMyRoleData(Pkg_S2CLogin pkg)
         {
-            mLoginPkg = pkg;
+            LoginPkg = pkg;
             MyRoleId = pkg.roleId;
         }
 
@@ -81,7 +84,7 @@ namespace AOIClient
                 Vector3 dir = new Vector3(x, 0, y);
                 if (dir != Vector3.zero)
                 {
-                    MainPlayer.gameObject.transform.position += dir * mLoginPkg.moveSpeed * Time.fixedDeltaTime;
+                    MainPlayer.gameObject.transform.position += dir * LoginPkg.moveSpeed * Time.fixedDeltaTime;
                     Pkg_C2SEntityMove pkg = new Pkg_C2SEntityMove()
                     {
                         operateCode = OperateCode.C2SEntityMove,

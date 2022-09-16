@@ -25,7 +25,6 @@ namespace AOIClient
                 {
                     if(netHandlerDict.TryGetValue(pkg.operateCode,out var handler))
                     {
-                        PELog.Log("触发");
                         handler?.Invoke(pkg);
                     }
                 }
@@ -78,6 +77,15 @@ namespace AOIClient
             {
                 PELog.Error("未注册{0}，无法移除监听", operate);
             }
+        }
+        private void OnApplicationQuit()
+        {
+            SendMsg(new Pkg_C2SEntityExit()
+            {
+                operateCode = OperateCode.C2SEntiyExit,
+                entityId = RoleManager.Instance.MyRoleId
+            });
+            asyncNet.CloseClient();
         }
     }
 }

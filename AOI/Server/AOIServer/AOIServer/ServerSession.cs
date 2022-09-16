@@ -28,7 +28,7 @@ namespace AOIServer
 
         protected override void OnReceiveMsg(Pkg msg)
         {
-            PELog.Log("Receive Msg:{0}",msg.operateCode);
+            //PELog.Log("Receive Msg:{0}",msg.operateCode);
             ServerRoot.Instance.AddNetPkg(new NetPkg(this, msg));
         }
     }

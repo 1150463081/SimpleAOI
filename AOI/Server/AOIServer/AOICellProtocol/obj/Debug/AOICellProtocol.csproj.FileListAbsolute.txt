@@ -17,4 +17,3 @@ E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOICellProtocol\obj\D
 E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOICellProtocol\obj\Debug\AOICellProtocol.csproj.CopyComplete
 E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOICellProtocol\obj\Debug\AOICellProtocol.dll
 E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOICellProtocol\obj\Debug\AOICellProtocol.pdb
-E:\UnityProject\MoMoRpg\AOI\SimpleAOI\AOI\Server\AOIServer\AOICellProtocol\obj\Debug\AOICellProtocol.csprojAssemblyReference.cache

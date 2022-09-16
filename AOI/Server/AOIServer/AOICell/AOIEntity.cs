@@ -7,6 +7,11 @@ using PEUtils;
 
 namespace AOICell
 {
+    public enum EDriveType
+    {
+        Client,
+        Server
+    }
     public class AOIEntity
     {
         public int EntityId { get; private set; }
@@ -23,6 +28,7 @@ namespace AOICell
         public float PosZ { get; private set; }
         public EMoveType MoveType { get; private set; }
         public ECrossDirType ECrossDirType { get; private set; }
+        public EDriveType EDriveType { get; private set; }
 
         private CellUpdateData entityUpdateData;
         //存量视野九宫格,用于第一进格时获取周围格的信息
@@ -30,11 +36,12 @@ namespace AOICell
         private List<AOICell> cellAddView = new List<AOICell>();
         private List<AOICell> cellRemoveView = new List<AOICell>();
 
-        public AOIEntity(int entityId, AOIMgr mgr)
+        public AOIEntity(int entityId, AOIMgr mgr,EDriveType eDriveType)
         {
             EntityId = entityId;
             this.mgr = mgr;
             entityUpdateData = new CellUpdateData();
+            EDriveType = eDriveType; 
         }
 
         public void UpdatePos(float x, float z, EMoveType moveType = EMoveType.None)
@@ -52,6 +59,15 @@ namespace AOICell
                 ZLastIndex = ZIndex;
                 LastCellKey = CellKey;
 
+                //退出之前的宫格
+                if (!String.IsNullOrWhiteSpace(CellKey))//不是第一次进入宫格
+                {
+                    if (mgr.CellDict.TryGetValue(CellKey, out var cell))
+                    {
+                        cell.ExitEntity.Add(this);
+                    }
+                }
+
                 XIndex = _xIndex;
                 ZIndex = _zIndex;
                 CellKey = _cellKey;
@@ -60,7 +76,7 @@ namespace AOICell
 
                 if (MoveType != EMoveType.TransferEnter && MoveType != EMoveType.TransferOut)
                 {
-                    moveType = EMoveType.MoveCross;
+                    MoveType = EMoveType.MoveCross;
                     #region 穿越边界朝向判断
                     if (XIndex < XLastIndex)
                     {
@@ -110,7 +126,7 @@ namespace AOICell
             }
             else
             {
-                PELog.ColorLog(LogColor.Yellow, "MoveInside");
+                //PELog.ColorLog(LogColor.Yellow, $"MoveInside:{_cellKey}");
                 MoveType = EMoveType.MoveInside;
                 mgr.MoveInsideCell(this);
             }
@@ -118,15 +134,40 @@ namespace AOICell
         //对实体宫格视野存量进行增删变化
         public void CalculateViewChange()
         {
-            if (aroundCell != null)
+            AOICell cell = mgr.GetOrCreateCell(XIndex,ZIndex);
+            if (EDriveType == EDriveType.Client)
             {
-                for (int i = 0; i < aroundCell.Length; i++)
+                if (aroundCell != null)
                 {
-                    var set = aroundCell[i].HoldEntity;
-                    foreach (var e in set)
+                    for (int i = 0; i < aroundCell.Length; i++)
                     {
-                        PELog.ColorLog(LogColor.Magenta, "存量视野变化");
-                        entityUpdateData.enterList.Add(new EnterData(e.EntityId, e.PosX, e.PosZ));
+                        var set = aroundCell[i].HoldEntity;
+                        foreach (var e in set)
+                        {
+                            entityUpdateData.enterList.Add(new EnterData(e.EntityId, e.PosX, e.PosZ));
+                        }
+                    }
+                }
+                if (cellAddView.Count > 0)
+                {
+                    for (int i = 0; i < cellAddView.Count; i++)
+                    {
+                        var set = cellAddView[i].HoldEntity;
+                        foreach (var e in set)
+                        {
+                            entityUpdateData.enterList.Add(new EnterData(e.EntityId, e.PosX, e.PosZ));
+                        }
+                    }
+                }
+                if (cellRemoveView.Count > 0)
+                {
+                    for (int i = 0; i < cellRemoveView.Count; i++)
+                    {
+                        var set = cellRemoveView[i].HoldEntity;
+                        foreach (var e in set)
+                        {
+                            entityUpdateData.exitList.Add(new ExitData(e.EntityId));
+                        }
                     }
                 }
                 if (!entityUpdateData.IsEmpty)
@@ -135,20 +176,26 @@ namespace AOICell
                     entityUpdateData.Clear();
                 }
             }
+
             aroundCell = null;
+            cellAddView.Clear();
+            cellRemoveView.Clear();
         }
 
         public void AddAroundCellView(AOICell[] around)
         {
-            aroundCell = around;
+            if (EDriveType == EDriveType.Client)
+                aroundCell = around;
         }
         public void AddCellView(AOICell cell)
         {
-            cellAddView.Add(cell);
+            if (EDriveType == EDriveType.Client)
+                cellAddView.Add(cell);
         }
         public void RemoveCellView(AOICell cell)
         {
-            cellRemoveView.Add(cell);
+            if (EDriveType == EDriveType.Client)
+                cellRemoveView.Add(cell);
         }
     }
     public enum EMoveType

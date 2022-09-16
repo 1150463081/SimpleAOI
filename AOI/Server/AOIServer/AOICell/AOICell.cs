@@ -12,7 +12,8 @@ namespace AOICell
         public int ZIndex { get; private set; }
         public bool IsCalcuBoundary { get; private set; } = false;
         private AOIMgr mgr;
-
+        public int ClientAttentionNum { get; private set; }//客户端实体关注当前宫格的数量
+        public int ServerAttentionNum { get; private set; }//服务端实体关注当前宫格的数量
         #region GroundCell
         public AOICell Up => mgr.CellDict[$"{XIndex},{ZIndex + 1}"];
         public AOICell Down => mgr.CellDict[$"{XIndex},{ZIndex - 1}"];
@@ -35,9 +36,13 @@ namespace AOICell
 
 
         public CellUpdateData CellUpdateData { get; private set; }
-        public HashSet<AOIEntity> HoldEntity { get; private set; }
-        //新进入的实体，待实体存量增删完成后再加入HoldEntity
-        public HashSet<AOIEntity> EnterEntity { get; private set; }
+        public HashSet<AOIEntity> HoldEntity { get; private set; } = new HashSet<AOIEntity>();
+        //新进入的实体，待实体存量增删计算完成后再加入HoldEntity
+        public HashSet<AOIEntity> EnterEntity { get; private set; } = new HashSet<AOIEntity>();
+        //离开的实体，待实体存量增删计算完成后再从HoldEntity移除
+        public HashSet<AOIEntity> ExitEntity { get; private set; } = new HashSet<AOIEntity>();
+
+
 
         public AOICell(int xIndex, int zIndex, AOIMgr mgr)
         {
@@ -45,8 +50,6 @@ namespace AOICell
             ZIndex = zIndex;
             this.mgr = mgr;
             CellUpdateData = new CellUpdateData();
-            HoldEntity = new HashSet<AOIEntity>();
-            EnterEntity = new HashSet<AOIEntity>();
         }
         public void EnterCell(AOIEntity entity)
         {
@@ -74,15 +77,22 @@ namespace AOICell
         }
         public void MoveCell(AOIEntity entity)
         {
-
+            for (int i = 0; i < AOIGround.Length; i++)
+            {
+                AOIGround[i].AddCellOperate(ECellOperate.EntityMove, entity);
+            }
         }
         public void ExitCell(AOIEntity entity)
         {
+            if (!ExitEntity.Add(entity))
+            {
+                this.Error($"ExitEntity Add Err:{entity.EntityId}");
+                return;
+            }
             for (int i = 0; i < AOIGround.Length; i++)
             {
                 AOIGround[i].AddCellOperate(ECellOperate.EntityExit, entity);
             }
-            HoldEntity.Remove(entity);
         }
 
         void CrossMove(ECrossDirType crossDir, AOIEntity entity)
@@ -114,12 +124,28 @@ namespace AOICell
             switch (cellOperate)
             {
                 case ECellOperate.EntityEnter:
-                    CellUpdateData.enterList.Add(new EnterData(entity.EntityId, entity.XIndex, entity.ZIndex));
+                    if(entity.EDriveType == EDriveType.Client)
+                    {
+                        ClientAttentionNum++;
+                    }
+                    else
+                    {
+                        ServerAttentionNum++;
+                    }
+                    CellUpdateData.enterList.Add(new EnterData(entity.EntityId, entity.PosX, entity.PosZ));
                     break;
                 case ECellOperate.EntityMove:
-                    CellUpdateData.moveList.Add(new MoveData(entity.EntityId, entity.XIndex, entity.ZIndex));
+                    CellUpdateData.moveList.Add(new MoveData(entity.EntityId, entity.PosX, entity.PosZ));
                     break;
                 case ECellOperate.EntityExit:
+                    if (entity.EDriveType == EDriveType.Client)
+                    {
+                        ClientAttentionNum--;
+                    }
+                    else
+                    {
+                        ServerAttentionNum--;
+                    }
                     CellUpdateData.exitList.Add(new ExitData(entity.EntityId));
                     break;
             }
@@ -323,7 +349,11 @@ namespace AOICell
         {
             if (!CellUpdateData.IsEmpty)
             {
-                mgr.CellEntityOpCombineEvent(this, CellUpdateData);
+                //持有实体大于0且周围宫格客户端关注数量大于零才进行增量叠加，发给客户端
+                if (HoldEntity.Count > 0 && ClientAttentionNum > 0)
+                {
+                    mgr.CellEntityOpCombineEvent(this, CellUpdateData);
+                }
                 CellUpdateData.Clear();
             }
         }

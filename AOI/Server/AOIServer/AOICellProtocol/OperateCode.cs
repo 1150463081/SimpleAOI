@@ -22,6 +22,10 @@ namespace AOICellProtocol
         C2SEntityMove=120,
 
         //玩家离开
-        C2SEntiyExit=131
+        C2SEntiyExit=130,
+
+        //创建宫格
+        S2CCreateCell=140,
+        S2CInitExistCell=141,
     }
 }

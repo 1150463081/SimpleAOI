@@ -6,20 +6,24 @@ using System.Threading.Tasks;
 using PEUtils;
 
 namespace AOICell
-{ 
+{
     //核心思路，存量增删(针对AOIEntity)，增量叠加(针对AOICell)
     public static class AOICfg
     {
-        public static int cellSize = 20;
+        public static int cellSize = 10;
         public static int cellCount = 100;
-        public static int moveSpeed = 40;
+        public static int moveSpeed = 20;
+        public static int borderUp = 100;
+        public static int borderDown = -100;
+        public static int borderLeft = -100;
+        public static int borderRight = 100;
     }
     public class AOIMgr
     {
         public int CellSize => AOICfg.cellSize;
-        public int CellCount => AOICfg.cellCount;
         public Action<AOIEntity, CellUpdateData> EntityViewChangeEvent;
         public Action<AOICell, CellUpdateData> CellEntityOpCombineEvent;
+        public Action<int, int> CellCreateEvent;
 
         public Dictionary<string, AOICell> CellDict;
         private List<AOIEntity> entityList;
@@ -30,16 +34,16 @@ namespace AOICell
             entityList = new List<AOIEntity>();
         }
 
-        public AOIEntity EnterCell(int entityId,float x,float z)
+        public AOIEntity EnterCell(int entityId, float x, float z,EDriveType eDriveType)
         {
-            AOIEntity entity = new AOIEntity(entityId, this);
+            AOIEntity entity = new AOIEntity(entityId, this,eDriveType);
             entity.UpdatePos(x, z, EMoveType.TransferEnter);
             entityList.Add(entity);
             return entity;
         }
         public void ExitCell(AOIEntity entity)
         {
-            if(CellDict.TryGetValue(entity.CellKey,out var cell))
+            if (CellDict.TryGetValue(entity.CellKey, out var cell))
             {
                 cell.ExitCell(entity);
                 entityList.Remove(entity);
@@ -64,14 +68,19 @@ namespace AOICell
                     cell.HoldEntity.UnionWith(cell.EnterEntity);
                     cell.EnterEntity.Clear();
                 }
+                if (cell.ExitEntity.Count > 0)
+                {
+                    cell.HoldEntity.ExceptWith(cell.ExitEntity);
+                    cell.ExitEntity.Clear();
+                }
                 cell.CalcCellOpCombine();
             }
         }
         //某个实体穿越了边界 
         public void MoveCrossCell(AOIEntity entity)
         {
-            var cell = GetOrCreateCell(entity.XIndex,entity.ZIndex);
-            if(!cell.IsCalcuBoundary)
+            var cell = GetOrCreateCell(entity.XIndex, entity.ZIndex);
+            if (!cell.IsCalcuBoundary)
             {
                 cell.CalcuBoundary();
             }
@@ -100,7 +109,7 @@ namespace AOICell
             }
             return CellDict[key];
         }
-        public bool HasCell(int xIndex,int zIndex)
+        public bool HasCell(int xIndex, int zIndex)
         {
             var key = GetCellKey(xIndex, zIndex);
             return CellDict.ContainsKey(key);
@@ -112,9 +121,10 @@ namespace AOICell
             {
                 cell = new AOICell(xIndex, zIndex, this);
                 CellDict[key] = cell;
+                CellCreateEvent?.Invoke(xIndex, zIndex);
             }
         }
-        public string GetCellKey(int xIndex,int zIndex)
+        public string GetCellKey(int xIndex, int zIndex)
         {
             return $"{xIndex},{zIndex}";
         }

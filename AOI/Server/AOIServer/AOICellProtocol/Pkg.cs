@@ -29,6 +29,7 @@ namespace AOICellProtocol
     {
         public int roleId;
         public int moveSpeed;
+        public int cellSize;
     }
     [Serializable]
     public class Pkg_S2CUpdateAOI : Pkg
@@ -68,5 +69,17 @@ namespace AOICellProtocol
     public class Pkg_C2SEntityExit : Pkg
     {
         public int entityId;
+    }
+    [Serializable]
+    public class Pkg_S2CCreateCell : Pkg
+    {
+        public int xIndex;
+        public int zIndex;
+    }
+    [Serializable]
+    public class Pkg_S2CInitExistCell : Pkg
+    {
+        public  List<int> xArr;
+        public List<int> zArr;
     }
 }

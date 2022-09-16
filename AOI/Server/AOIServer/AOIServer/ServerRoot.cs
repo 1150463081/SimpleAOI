@@ -5,6 +5,8 @@ using System.Text;
 using PENet;
 using AOICellProtocol;
 using System.Collections.Concurrent;
+using AOICell;
+using System.Numerics;
 
 namespace AOIServer
 {
@@ -30,11 +32,29 @@ namespace AOIServer
         public BattleStage BattleStage { get; private set; }
 
 
-        private static int index = 1000;
-        public static int SpawnRoleId()
+        private static int cIndex = 1000;
+        public int SpawnClientId()
         {
-            return index++;
+            return cIndex++;
         }
+        private static int sIndex = 2000;
+        public int SpawnServerId()
+        {
+            return sIndex++;
+        }
+        //创建机器人
+        public void CreateRobotRole()
+        {
+            Random random = new Random();
+            var rdx = random.Next(AOICfg.borderLeft, AOICfg.borderRight);
+            var rdz = random.Next(AOICfg.borderDown, AOICfg.borderUp);
+            var roleId = SpawnServerId();
+            var robotEntity = new RoleEntity(roleId, null, AOICell.EDriveType.Server);
+            robotEntity.TargetPos = new Vector3(rdx, 0, rdz);
+            BattleStage.EnterStage(robotEntity);
+            robotEntity.StartRandomMove();
+        }
+
         public void Init()
         {
             asyncNet.StartAsServer("127.0.0.1", 0415);
